@@ -1,4 +1,5 @@
 <meta charset="UTF-8">
+<script src="../../../utils.js"></script>
 <script>
     /*
     Problema: Custo da reforma
@@ -8,13 +9,25 @@
     Quanto deverá ser pago para o pintor
     Quanto foi o custo total da obra, considerando os dois profissionais envolvidos
     */
-
+    
     //ENTRADA
-
+    const horasPedreiro = toAsk('Qual a quantidade de horas trabalhadas pelo pedreiro em sua casa?');
+    const horasPintor = toAsk('Qual a quantidade de horas trabalhadas pelo pintor em sua casa?');
     
     //PROCESSAMENTO
-    
-    
+    const valorPedreiro = multiplicar(horasPedreiro, 30); 
+    const valorPintor = multiplicar(horasPintor, 25);
+
     //SAÍDA
+    mostrar(`Foi gasto R$${formatarBrl(valorPedreiro + valorPintor)} nessa obra, sendo:
+    <ul>
+        <li>
+    R$${formatarBrl(valorPedreiro)} com o pedreiro;
+        </li>
+        <li>
+    R$${formatarBrl(valorPintor)} com o pintor.
+        </li>
+    <ul>
+    `);
     
 </script>
