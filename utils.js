@@ -113,3 +113,10 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 function calcularAluguelCarro(diasAlugados, kmRodados) {
     return ((diasAlugados) * 60) + ((kmRodados) * 0.15)
 }
+
+const newRound = (value, decimals) => Math.ceil(value * 10 ** decimals) / 10 ** decimals
+
+const test = 1.42333123213
+
+console.log(newRound(test, 2))
+console.log(newRound(test, 4))
