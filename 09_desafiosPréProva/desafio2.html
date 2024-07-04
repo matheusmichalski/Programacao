@@ -1,0 +1,16 @@
+<script src="/utils.js"></script>
+<script>
+
+/* Problema: Importação
+Considere que o usuário deseja importar um determinado produto de um determinado país.
+Para poder importar, deverá pagar 60% de imposto sobre o preço do produto.
+Além deste, também é preciso pagar 20% de ICMS sobre o preço do produto.
+Peça para o usuário informar o preço do produto a ser importado e calcule qual será o preço final a ser pago pelo produto, considerando todos os impostos. 
+*/
+
+const produto = toAsk('Qual o preço do produto(em Real).');
+
+const produtoComImportacao = (produto + (produto * 0.6)) + produto * 0.2
+
+display(`O preço do prduto com os impostos será de: R$${produtoComImportacao.toFixed(2).replace('.',',')}.`)
+</script>

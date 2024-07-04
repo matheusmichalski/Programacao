@@ -1,0 +1,33 @@
+<script src="/utils.js"></script>
+<script>
+/*
+Problema: Custo da Obra
+Considere que o usuário deseja realizar a construção de sua casa.
+Peça para informar a quantidade de pedreiros que trabalharão na casa
+Peça para informar o preço da diária do pedreiro.
+Peça também para informar por quantos dias os pedreiros trabalharam.
+Após a conclusão pelos pedreiros, os pintores darão continuidade na obra.
+Peça para informar a quantidade de pintores que trabalharão na casa.
+Peça para informar o preço da diária dos pintores.
+Peça também para informar por quantos dias os pintores trabalharam.
+Calcule e apresente:
+- Valor total gasto com pedreiros e pintores
+- Quantidade de dias demandados para finalizar a construção
+*/
+
+const quantidadePedreiros = toAsk('Informe quantos pedreiros trabalharam na sua casa.');
+const valorDiariaPedreiros = toAsk('Informe o preço da diária por pedreiro.');
+const diasTrabalhadosPedreiros = toAsk('Informe quantos dias os pedreiros trabalharam.');
+const quantidadePintores = toAsk('Informe quantos pintores trabalharam na sua casa.');
+const valorDiariaPintor = toAsk('Informe o preço da diária por pintor?.');
+const diasTrabalhadosPintores = toAsk('Informe quantos dias os pintores trabalharam.');
+
+const gastos = (quantidadePedreiros * valorDiariaPedreiros * diasTrabalhadosPedreiros) + (quantidadePintores * valorDiariaPintor * diasTrabalhadosPintores);
+const tempoNecessario = diasTrabalhadosPedreiros + diasTrabalhadosPintores;
+
+display(`Foram necessários:
+<ul>
+    <li>R$${gastos.toFixed(2).replace('.',',')};</li>
+    <li>${Math.ceil(tempoNecessario.toFixed(0).replace('.',','))} dias.</li>
+</ul>`)
+</script>

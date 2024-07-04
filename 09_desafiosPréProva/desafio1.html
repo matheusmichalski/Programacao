@@ -1,0 +1,52 @@
+<script src="/utils.js"></script>
+<script>
+/* Problema: Eleição Municipal
+Peça para o usuário informar a quantidade de eleitores que possuem no município.
+Peça também para o usuário informar quantos votos o Candidato 1 recebeu.
+Peça para o usuário informar quantos votos o Candidato 2 recebeu.
+Além dos candidatos, peça para informar qual a quantidade de votos brancos e qual a quantidade de votos nulos.
+Apresente para o usuário:
+- A porcentagem de votos que o Candidato 1 recebeu
+- A porcentagem de votos que o Candidato 2 recebeu
+- A porcentagem de votos brancos
+- A porcentagem de votos nulos
+- A porcentagem de pessoas que não foram votar 
+*/
+
+const numEleitores = toAsk('Quantos eleitores há no município?');
+const perVotosCandidato01 = toAsk('Qual a porcentagem de votos do candidato 1 recebeu?');
+const perVotosCandidato02 = toAsk('Qual a porcentagem de votos do candidato 2 recebeu?');
+const perVotosNulos = toAsk('Qual a porcentagem de votos nulos');
+const perVotosBrancos = toAsk('Qual a porcentagem de votos brancos');
+
+// while(perVotosCandidato01 + perVotosCandidato02 + perVotosNulos + perVotosBrancos > 101 ) {
+//     alert('A porcentagem não pode ser maior que 100%')
+//     const numEleitores = toAsk('Quantos eleitores há no município?');
+//     const perVotosCandidato01 = toAsk('Qual a porcentagem de votos do candidato 1 recebeu?');
+//     const perVotosCandidato02 = toAsk('Qual a porcentagem de votos do candidato 2 recebeu?');
+//     const perVotosNulos = toAsk('Qual a porcentagem de votos nulos');
+//     const perVotosBrancos = toAsk('Qual a porcentagem de votos brancos');
+// }
+
+const municipio = {
+
+     numVotosCandidato01: perVotosCandidato01 * numEleitores / 100,
+     numVotosCandidato02: perVotosCandidato02 * numEleitores / 100,
+     numVotosBrancos: perVotosBrancos * numEleitores / 100,
+     numVotosNulos:  perVotosNulos * numEleitores / 100,   
+}
+
+ document.write(`Os valores são:
+ <ul>
+    <li> Número de votos candidato do candidato 01: ${municipio.numVotosCandidato01.toFixed(0)}</li>
+    <li> Número de votos candidato do candidato 02: ${municipio.numVotosCandidato02.toFixed(0)}</li>
+    <li> Número de votos brancos: ${municipio.numVotosBrancos.toFixed(0)}</li>
+    <li> Número de votos nulos: ${municipio.numVotosNulos.toFixed(0)}</li>
+</ul>`)
+
+
+
+
+
+
+</script>

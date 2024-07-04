@@ -1,0 +1,31 @@
+<script src="/utils.js"></script>
+<script>
+/* Problema: Média Ponderada
+Um professor aplicou, durante o trimestre, 4 mecanismos avaliativos.
+- A nota 1 possui peso 0.5
+- A nota 2 possui peso 1
+- A nota 3 possui peso 1.5
+- A nota 4 possui peso 2
+Peça para o usuário informar quais são as 4 notas obtidas e calcule a média trimestral do aluno.
+*/
+
+    const nota01 = toAsk('Qual a nota a sua 1° nota obtida?');
+    const nota02 = toAsk('Qual a nota a sua 2° nota obtida?');
+    const nota03 = toAsk('Qual a nota a sua 3° nota obtida?');
+    const nota04 = toAsk('Qual a nota a sua 4° nota obtida?');
+
+    
+// while(nota01 > 10 || nota02 > 10|| nota03 > 10 || nota04 > 10){
+//     const nota01 = toAsk('Qual a nota a sua 1° nota obtida?');
+//     const nota02 = toAsk('Qual a nota a sua 2° nota obtida?');
+//     const nota03 = toAsk('Qual a nota a sua 3° nota obtida?');
+//     const nota04 = toAsk('Qual a nota a sua 4° nota obtida?');
+// 
+
+// Como fazer com a notificação do while seja feita logo após o erro, sem percorrer as demais variáveis, há como fazer isso sem usar 4 while's 
+// ou uma função?
+
+const mediaTrim = (nota01 * 0.5 / 5) + (nota02 * 1 / 5) + (nota03 * 1.5 / 5) + (nota04 * 2 / 5);
+
+display(`A sua média é: ${mediaTrim.toFixed(2)}.`)
+</script>

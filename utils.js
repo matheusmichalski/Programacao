@@ -42,7 +42,7 @@ function mostrarSemEstilo(texto) {
     document.write(texto)
 }
 
-function mostrar(texto) {
+function display(texto) {
     const content = document.createElement('div')
 
     content.innerHTML = `
