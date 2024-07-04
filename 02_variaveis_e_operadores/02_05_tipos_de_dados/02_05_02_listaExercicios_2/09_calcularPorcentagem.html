@@ -1,17 +1,19 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
+<script src="utils.js"></script>
 <script>
     /*
-    PROBLEMA: Calcular porcentagem de desconto
-    Peça para o usuário informar o preço original do produto e o preço do produto durante a campanha promocional. Calcule qual foi a porcentagem de desconto dada para o produto na promoção.
+    Problema: Fahrenheit para Celsius
+    Peça para o usuário informar uma temperatura em Fahrenheit. Converta e apresente a temperatura em graus Celsius.
     */
 
     //ENTRADA
-
+    const temperaturaEmFahrenheit = perguntar('Informe uma temperatura em Fahrenheit(°F).')
     
     //PROCESSAMENTO
-    
-    
+    const temperaturaEmCelsius = conversaoTempFahrenheit(temperaturaEmFahrenheit)
+
+
     //SAÍDA
-    
+    mostrar(`Valor em Celsius: ${temperaturaEmCelsius}° C .`)
+
 </script>

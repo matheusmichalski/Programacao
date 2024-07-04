@@ -1,17 +1,22 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
+<script src="utils.js"></script>
 <script>
     /*
-    Problema: Divisão de herança
-    Peça para o usuário informar a quantidade de cabeças de gado que um fazendeiro possui e também informar quantos herdeiros possui. Antes de falecer, o fazendeiro doará 15% dessas cabeças de gado. Calcule e apresente quantas cabeças de gado restarão para cada herdeiro.
+    PROBLEMA: Dias perdidos por fumar
+    Peça para o usuário informar a quantidade de cigarros fumados por dia e a quantidade de anos que fuma. Apresente o total de dias perdidos, considerando que cada cigarro reduz a vida em 10 minutos.
     */
 
     //ENTRADA
-    
+    let cigarrosPorDia = perguntar('Quantos cigarros você fuma por dia?')
+    let anosFumando = perguntar('Há quantos anos você fuma?')
+
     
     //PROCESSAMENTO
-    
+    const cigarrosFumados = cigarrosPorDia * 365 * anosFumando
+    const minutosPerdidos = cigarrosFumados * 10
+    const diasPerdidos = (minutosPerdidos / 1440).toFixed(2)
     
     //SAÍDA
-    
+    mostrar(`Você perdeu ${diasPerdidos} dias.`)
+
 </script>

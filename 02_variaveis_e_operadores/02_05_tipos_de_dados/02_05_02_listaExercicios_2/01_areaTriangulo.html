@@ -1,20 +1,23 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
+<script src="utils.js"></script>
 <script>
     /*
-    Problema:  Área do triângulo
-    Peça para o usuário informar a base e a altura do triângulo e calcule a área do triângulo. Para o cálculo do triângulo, utilize: área = (base x altura) / 2. Apresente o resultado ao final do programa.
+    Problema: Diferença de idade
+    Peça para o usuário informar o seu ano de nascimento e o ano de nascimento do irmão mais velho. Após, o programa deverá apresentar uma mensagem especificando a diferença de idade entre os irmãos.
     */
 
     //ENTRADA
-        perguntar('taesasdas')
+
+    const idadeMaior = perguntar("Qual a idade do seu irmão mais velho?")
+    const idadeMenor = perguntar("Qual a idade do seu irmão mais novo?")
 
 
-    
     //PROCESSAMENTO
-    
-    
+
+    const diferenca = subtrair (idadeMaior,idadeMenor)
+
+
     //SAÍDA
-    mostrar('2313231')
+    mostrar(`A diferença de idade entre os irmãos é ${diferenca}.`)
 
 </script>

@@ -1,22 +1,21 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
+<script src="utils.js"></script>
 <script>
-    /*
-    Problema: Viagem de automóvel
-    Peça para o usuário informar quanto tempo gastou durante a viagem, quantos litros de combustível foram consumidos, o preço do litro de combustível e qual a quilometragem total percorrida. Calcule e apresente os seguintes dados:
-
-    - Velocidade média da viagem em quilômetros por hora
-    - Consumo médio de combustível do veículo
-    - Custo total do combustível
-    - Custo da viagem por quilômetro percorrido
-    */
+    //PROBLEMA
+    //Salário líquido
+    //Peça para o usuário informar quantas horas trabalha no mês e quantos que recebe por hora trabalhada.Calcule o salário líquido considerando os seguintes descontos:
+    // INSS: 8 % do salário bruto
+    // IR: 11 % do salário bruto
 
     //ENTRADA
-    
+    const horasTrabalhadas = perguntar('Quantas horas você trabalha por mês?')
+    const salarioPorHora = perguntar('Quanto você recebe por hora de trabalho?')
     
     //PROCESSAMENTO
-    
-    
+    const salarioBruto = horasTrabalhadas * salarioPorHora
+    const salarioLiquido = salarioBruto * 0.81
+
     //SAÍDA
-    
+    mostrar(`O seu salário líquido é R$${salarioLiquido}.`)
+
 </script>

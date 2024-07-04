@@ -1,17 +1,19 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
+<script src="utils.js"></script>
 <script>
     /*
-    Problema: Calcular troco
-    Peça para o usuário informar o valor pago pelo cliente e também informar quanto foi o consumo do cliente na loja. Considerando que o cliente dará um valor superior ao quanto consumiu, calcule e apresente, ao final do programa, quanto deverá dar de troco para o cliente.
+    Problema: Aumento Salarial
+    Peça para o usuário informar o salário atual e a porcentagem de aumento. Faça o cálculo do salário final após o aumento baseado na porcentagem informada e apresente o resultado.
     */
 
     //ENTRADA
-
+    const salarioAtual = perguntar('Informe seu salário atual.')
+    const porcentAumento = perguntar('Informe a porcentagem de aumento')
     
     //PROCESSAMENTO
-    
-    
+    const salarioFinal = salarioAtual * ((porcentAumento / 100) + 1)
+
     //SAÍDA
-    
+    mostrar(`Salario final ${salarioFinal}.`)
+
 </script>

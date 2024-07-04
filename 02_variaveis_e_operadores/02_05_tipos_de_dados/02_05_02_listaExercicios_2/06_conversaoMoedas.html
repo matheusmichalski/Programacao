@@ -1,17 +1,21 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
+<script src="utils.js"></script>
 <script>
     /*
-    PROBLEMA: Conversão de moedas
-    O usuário do programa pretende viajar para os Estados Unidos da América. Peça para ele informar quantos dólares levará para gastar durante a viagem. Também peça para o usuário informar a cotação do dólar. Ao final, apresente, em reais, quanto o usuário gastará na viagem.
+    Problema: Aumento Salarial
+    Peça para o usuário informar o salário atual e a porcentagem de aumento. Faça o cálculo do salário final após o aumento baseado na porcentagem informada e apresente o resultado.
     */
 
     //ENTRADA
+    const salarioAtual = perguntar('Qual salário você  atualmente?')
+    const aumentoPercentual = perguntar('Qual o percentual de aumento você deseja?')
 
-    
     //PROCESSAMENTO
+    const salarioComAumento = aumentoPorcentagem(salarioAtual, aumentoPercentual)
+    
     
     
     //SAÍDA
-    
+    mostrar(`O seu salário com ${aumentoPercentual}% de aumento percentual é ${salarioComAumento}.`)
+
 </script>
