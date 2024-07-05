@@ -76,7 +76,7 @@ let numeroUsuario = Number(prompt("Número para calcular tabuada:"))
         document.write(`${numeroUsuario} x ${contador} = ${contador * numeroUsuario}</br>`)
     }
 ```
-Inicialmente, o programa perguntará para o usuário qual o número que deseja calcular a tabuada, que é o nosso já conhecido prompt.
+Inicialmente, o programa toAská para o usuário qual o número que deseja calcular a tabuada, que é o nosso já conhecido prompt.
 
 ![tabuadaDoUsuario](tabuadaDoUsuario.png)
 

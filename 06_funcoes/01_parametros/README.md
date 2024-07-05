@@ -51,7 +51,7 @@ Portanto, para chamar a função, utilizando dois parâmetros, a sintaxe será d
 situacaoAluno(10, 6);
 ```
 
-Considere, então, que o programa perguntará ao aluno qual foi sua nota na prova e qual é a média para aprovação. Assim, o programa deve receber esses dois valores e passar para a função. Veja o exemplo: [EXEMPLO03.HTML](../exemplos/exemplo03.html)
+Considere, então, que o programa toAská ao aluno qual foi sua nota na prova e qual é a média para aprovação. Assim, o programa deve receber esses dois valores e passar para a função. Veja o exemplo: [EXEMPLO03.HTML](../exemplos/exemplo03.html)
 
 ```javascript
     //Aqui, a função recebe dois parâmetros, que são a média do aluno e a média para aprovação

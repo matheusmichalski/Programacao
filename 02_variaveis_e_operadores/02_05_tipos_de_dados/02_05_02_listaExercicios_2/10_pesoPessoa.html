@@ -7,10 +7,10 @@
     */
 
     //ENTRADA
-    const dias = perguntar('Qual os dias?')
-    const horas = perguntar('Qual a hora?')
-    const minutos = perguntar('Qual a minuto?')
-    const segundos = perguntar('Qual a segundo?')
+    const dias = toAsk('Qual os dias?')
+    const horas = toAsk('Qual a hora?')
+    const minutos = toAsk('Qual a minuto?')
+    const segundos = toAsk('Qual a segundo?')
 
     //PROCESSAMENTO
     const segundosTotais = segundos + (minutos * 60) + (horas * 3600) + (dias * 86400)

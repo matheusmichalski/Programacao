@@ -60,9 +60,9 @@ Apresente em tela a população prevista para um prazo de 5 anos e um prazo de 1
 Apresente os dados em tela.
 
 ### <u>**[Problema 10: Eleição de representante de sala](10_representanteSala.html)**</u>
-Peça para o programa perguntar ao professor regente o nome dos três candidados a representante da sala.
+Peça para o programa toAsk ao professor regente o nome dos três candidados a representante da sala.
 
-Peça também para o programa perguntar ao professor regente a quantidade de alunos votantes.
+Peça também para o programa toAsk ao professor regente a quantidade de alunos votantes.
 
 Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação, com o quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
 

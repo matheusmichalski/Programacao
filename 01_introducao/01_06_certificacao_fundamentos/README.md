@@ -18,7 +18,7 @@ Após acessar o link acima, clique em [**Sign up**](https://mimo.org/web/registe
 
 Após a criação da conta, clique em **Continue**. Na próxima página, coloque o seu **NOME**! _Não utilize nomes que não o identificarão!_
 
-Na próxima página, clique em **Sounds good**. Então o MIMO lhe perguntará o que o motiva a aprender a programar. Selecione a opção que mais lhe convém. Após, clique em **Continue**.
+Na próxima página, clique em **Sounds good**. Então o MIMO lhe toAská o que o motiva a aprender a programar. Selecione a opção que mais lhe convém. Após, clique em **Continue**.
 
 Então o MIMO lhe apresentará uma oferta para adquirir o plano Premium. Clique **Let me see the offer** e então clique no **X** que aparecerá no canto direito superior da sua tela. Então ele fará algumas outras perguntas para você.
 

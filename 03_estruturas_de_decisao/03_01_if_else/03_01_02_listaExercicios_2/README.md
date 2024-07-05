@@ -39,7 +39,7 @@ Faça um script que pergunte ao usuário qual a distância da viagem, em quilôm
 Apresente o resultado correspondente com os dias de duração da viagem.
 
 ### <u>**[Problema 6: Custo do dia de trabalho](06_custoDiaTrabalho.html)**</u>
-Peça para o programa perguntar ao usuário quantas viagens foram realizadas por dia e também qual o cargo que ocupa.
+Peça para o programa toAsk ao usuário quantas viagens foram realizadas por dia e também qual o cargo que ocupa.
 Considere que o valor da diária é de R$ 100,00 (100).
 - Se o usuário ocupar o cargo de "Motorista" e realizou até 10 viagens, haverá um adicional de 20% (20/100);
 - Se o usuário ocupar o cargo de "Motorista" e realizou mais de 10 viagens, haverá um adicional de 35% (35/100);
@@ -48,7 +48,7 @@ Apresente em tela o cargo do usuário e também o valor final recebido pelas via
 
 ### <u>**[Problema 7: Auxílio Transporte](07_auxilioTransporte.html)**</u>
 Faça um script que pergunte ao funcionário quanto recebe de salário por mês.
-O programa deverá perguntar ao profissional se ele deseja receber auxílio transporte e deverá perguntar se ele utiliza veículo próprio para se locomover ao trabalho.
+O programa deverá toAsk ao profissional se ele deseja receber auxílio transporte e deverá toAsk se ele utiliza veículo próprio para se locomover ao trabalho.
 Se o funcionário deseja receber auxílio transporte ou utiliza veículo próprio, deverão ser descontados 6% (0.06) da remuneração mensal informada pelo funcionário.
 Ainda, se utilizar veículo próprio, a empresa fornecerá um adicional de R$ 200,00 ou, caso utilize apenas o transporte público, a empresa fornecerá um adicional de R$ 150,00.
 Calcule e apresente em tela o desconto, se existente, e o salário final recebido pelo funcionário.
