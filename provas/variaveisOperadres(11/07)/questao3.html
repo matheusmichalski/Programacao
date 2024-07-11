@@ -1,0 +1,19 @@
+<script src="/utils.js"></script>
+<script>
+/* 
+Elaborar um programa que leia a duração de uma viagem em dias e horas. Calcule e informe a duração total da viagem em número de horas. 
+*/
+
+//Entrada
+
+const travelDays = toAsk('Informe a duração da viagem(em dias).');
+
+// Processamento
+
+const totalTravel = Math.ceil(travelDays * 24) 
+
+//Saída
+
+display(`O tempo total de duração da viagem foi: ${totalTravel} horas.`);
+
+</script>
