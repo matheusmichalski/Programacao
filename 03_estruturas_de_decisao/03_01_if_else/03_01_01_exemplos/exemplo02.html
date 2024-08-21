@@ -1,0 +1,31 @@
+<script src="../../../utils.js"></script>
+<script>
+
+
+/*
+    
+    Exercício 2 – Qualificação para aposentadoria
+    Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não. Para
+    estar em condições, um dos seguintes requisitos deve ser satisfeito:
+    - Ter no mínimo 65 anos de idade.
+    - Ter trabalhado no mínimo 30 anos.
+    - Ter no mínimo 60 anos e ter trabalhado no mínimo 25 anos.
+    Com base nas informações acima, faça um algoritmo que leia: o número do empregado (código), o
+    ano de seu nascimento e o ano de seu ingresso na empresa. O programa deverá escrever a idade e o
+    tempo de trabalho do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'.
+    
+*/
+
+const anoNascimento = toAsk('Informe o seu ano de nascimento.');
+const anoIngresso = toAsk('Informe o ano de ingresso na empresa.');
+const anoAtual = new Date().getFullYear();
+
+if ((anoAtual - anoNascimento) >= 65 || (anoAtual - anoIngresso) >= 30 || ((anoAtual - anoNascimento) >= 65 && (anoAtual - anoIngresso) >= 25)) {
+    display('Requerer aposentadoria.')
+} else {
+    display('Não requerer aposentadoria.')
+}
+
+
+
+</script>
