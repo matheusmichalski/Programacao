@@ -10,7 +10,7 @@ function perguntarComCondicao(pergunta, condicao) {
 }
 
 function formatarBrl(valor) {
-    const formatar = valor.toFixed(2).replace('.',',');
+    const formatar = valor.toFixed(2).replace('.', ',');
     return formatar
 }
 
@@ -18,7 +18,7 @@ function perguntarHorario(pergunta) {
     let hora = NaN, minuto = NaN, segundo = NaN;
     while (isNaN(hora) && isNaN(minuto) && isNaN(segundo)) {
         [hora, minuto, segundo] = prompt(pergunta).split(':')
-        
+
         hora = Number(hora)
         minuto = Number(minuto)
         segundo = Number(segundo)
@@ -30,13 +30,13 @@ function perguntarHorario(pergunta) {
 function toAsk(parameter) {
     let response, number
     do {
-        if(response != undefined) alert('Informe um valor válido.')
+        if (response != undefined) alert('Informe um valor válido.')
 
-        response = prompt(parameter).replace(',','.')
+        response = prompt(parameter).replace(',', '.')
         number = response.trim() ? Number(response) : -1
     } while (isNaN(number) || number < 0)
 
-     return number
+    return number
 }
 function mostrarSemEstilo(texto) {
     document.write(texto)
@@ -107,12 +107,9 @@ function converterParaFahrenheit(valorCelsius) {
 }
 
 function calcularAluguelCarro(diasAlugados, kmRodados) {
-    return ((diasAlugados) * 60) + ((kmRodados) * 0.15)
+    return (diasAlugados * 60) + (kmRodados * 0.15)
 }
 
-function calcularAluguelCarro(diasAlugados, kmRodados) {
-    return ((diasAlugados) * 60) + ((kmRodados) * 0.15)
-}
 
 // const newRound = (value, decimals) => Math.ceil(value * 10 ** decimals) / 10 ** decimals
 
@@ -120,3 +117,19 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 
 // console.log(newRound(test, 2))
 // console.log(newRound(test, 4))
+
+
+function teste(qtVar, ...text) {
+    for (let i = 0; i < qtVar; i++) {
+        let createVar = Number(prompt(text[i]));
+        console.log(createVar);
+        while (isNaN(createVar) || createVar == "") {
+            alert("Informe um número!");
+            createVar = Number(prompt(text[i]));
+        }
+    }
+};
+
+
+
+
