@@ -120,27 +120,63 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 // console.log(newRound(test, 4))
 
 
-function teste(qtVar, dataType, ...text) {
+function teste(qtVar, dataType, ...{ nameVar, text }) {
     console.log(text)
-    let createVar, parameter;
+    let parameter = []
+    let myObject = {}
     for (let i = 0; i < qtVar; i++) {
         if (dataType.toLowerCase() === 'number') {
-            parameter = text[i];
+            parameter = {nameVar, text};
             console.log(parameter);
-            const FinalNumber =(parameter) => {
-                let response, number
-                console.log(parameter)
+            const getNumber = () => {
+                let response, number;
                 do {
                     if (response != undefined) alert('Informe um valor válido.')
                     response = prompt(parameter).replace(',', '.')
                     number = response.trim() ? Number(response) : -1
                 } while (isNaN(number) || number < 0)
-                console.log(number);
-                return number
+                myObject[nameVar] = number
             }
+            console.log(getNumber(parameter))
         }
     }
+    console.log(myArray)
 };
+
+// function teste(qtVar, dataType, ...text) {
+//     console.log(text);
+//     let parameter;
+
+//     for (let i = 0; i < qtVar; i++) {
+//         if (dataType.toLowerCase() === 'number') {
+//             parameter = text[i];
+
+//             // if (parameter === undefined) {
+//             //     console.error('Não há parâmetros suficientes.');
+//             //     return;
+//             // }
+
+//             console.log(parameter);
+
+//             // Definição da função para obter número válido
+//             const getNumber = (parameter) => {
+//                 let response, number;
+//                 console.log(parameter);
+//                 do {
+//                     if (response !== undefined) alert('Informe um valor válido.');
+//                     response = prompt(parameter).replace(',', '.');
+//                     number = response.trim() ? Number(response) : -1;
+//                 } while (isNaN(number) || number < 0);
+//                 console.log(number);
+//                 return number;
+//             };
+
+//             // Chama a função para obter o número
+//             getNumber(parameter);
+//         }
+//     }
+// }
+
 
 
 // while (isNaN(createVar) || createVar == "") {
