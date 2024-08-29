@@ -165,8 +165,7 @@ function createVar(qtVar, dataType, ...text) {
             getNumber(); // Chama a função para obter um número
         }
     });
-
-    console.log(myObject); // Exibe o objeto resultante
+    return myObject
 }
 
 
