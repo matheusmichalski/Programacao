@@ -27,17 +27,18 @@ function perguntarHorario(pergunta) {
 }
 
 
-function toAsk(parameter) {
-    let response, number
-    do {
-        if (response != undefined) alert('Informe um valor válido.')
+// function toAsk(parameter) {
+//     let response, number
+//     do {
+//         if (response != undefined) alert('Informe um valor válido.')
 
-        response = prompt(parameter).replace(',', '.')
-        number = response.trim() ? Number(response) : -1
-    } while (isNaN(number) || number < 0)
+//         response = prompt(parameter).replace(',', '.')
+//         number = response.trim() ? Number(response) : -1
+//     } while (isNaN(number) || number < 0)
 
-    return number
-}
+//     return number
+// }
+
 function mostrarSemEstilo(texto) {
     document.write(texto)
 }
@@ -119,17 +120,30 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 // console.log(newRound(test, 4))
 
 
-function teste(qtVar, ...text) {
+function teste(qtVar, dataType, ...text) {
+    console.log(text)
+    let createVar, parameter;
     for (let i = 0; i < qtVar; i++) {
-        let createVar = Number(prompt(text[i]));
-        console.log(createVar);
-        while (isNaN(createVar) || createVar == "") {
-            alert("Informe um número!");
-            createVar = Number(prompt(text[i]));
+        if (dataType.toLowerCase() === 'number') {
+            parameter = text[i];
+            console.log(parameter);
+            const FinalNumber =(parameter) => {
+                let response, number
+                console.log(parameter)
+                do {
+                    if (response != undefined) alert('Informe um valor válido.')
+                    response = prompt(parameter).replace(',', '.')
+                    number = response.trim() ? Number(response) : -1
+                } while (isNaN(number) || number < 0)
+                console.log(number);
+                return number
+            }
         }
     }
 };
 
 
-
-
+// while (isNaN(createVar) || createVar == "") {
+//     alert("Informe um número!");
+//     createVar = Number(prompt(text[i]));
+// }
