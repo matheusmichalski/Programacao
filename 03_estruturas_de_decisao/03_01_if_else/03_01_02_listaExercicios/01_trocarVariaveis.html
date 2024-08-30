@@ -7,22 +7,31 @@
     */
 
     //ENTRADA
-    
 
-    const meuObjt = createVar(2,
-    'number',
-    'variavel1: esta é minha primeira variável',
-    'variavel2: esta é minha segunda variável'
+    const meuObjt = createVar(
+        'number',
+        'valor1: Informe um valor inteiro(1)',
+        'valor2: Informe um valor inteiro(2)'
     );
-
-
-
-    
-
 
     //PROCESSAMENTO
 
+    console.log(meuObjt.valor1, meuObjt.valor2)
+
+    meuObjt.valor3 = meuObjt.valor2
+    meuObjt.valor2 = meuObjt.valor1
+    meuObjt.valor1 = meuObjt.valor3
+
+    console.log(meuObjt.valor1, meuObjt.valor2)
+
 
     //SAÍDA
+    display(`Os valor Invertidos são:
+    <ol> 
+        <li>${meuObjt.valor1}</li>
+        <li>${meuObjt.valor2}</li>
+    </ol> `
+    )
+
 
 </script>
