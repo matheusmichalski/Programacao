@@ -142,31 +142,30 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 //     console.log(myObject)
 // };
 
-function createVar(qtVar, dataType, ...text) {
-    let myObject = {};
+    function createVar(dataType, ...text) {
+        let myObject = {};
 
-    // Processa cada texto para extrair nome e mensagem
-    text.forEach((pairText) => {
-        // Divide o par em nome e mensagem com base no delimitador
-        const [nameVar, message] = pairText.split(':');
-        if (!nameVar || !message) return; // Se não for um par válido, ignora
+        // Processa cada texto para extrair nome e mensagem
+        text.forEach((pairText) => {
+            // Divide o par de texto em nome e mensagem com base no delimitador
+            const [nameVar, message] = pairText.split(':');
+            if (!nameVar || !message) return; // Se não for um par válido, ignora
 
-        if (dataType.toLowerCase() === 'number') {
-            const getNumber = () => {
-                let response, number;
-                do {
-                    if (response !== undefined) alert('Informe um valor válido.');
-                    response = prompt(message).replace(',', '.');
-                    number = response.trim() ? Number(response) : -1;
-                } while (isNaN(number) || number < 0);
-                myObject[nameVar] = number;
-            };
-            
-            getNumber(); // Chama a função para obter um número
-        }
-    });
-    return myObject
-}
+            if (dataType.toLowerCase() === 'number') {
+                const getNumber = () => {
+                    let response, number;
+                    do {
+                        if (response !== undefined) alert('Informe um valor válido.');
+                        response = prompt(message).replace(',', '.');
+                        number = response.trim() ? Number(response) : -1;
+                    } while (isNaN(number) || number < 0);
+                    myObject[nameVar] = number
+                };
+                getNumber(); 
+            }
+        });
+        return myObject
+    }
 
 
 
