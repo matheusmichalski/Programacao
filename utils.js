@@ -138,34 +138,164 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 //             }
 //             console.log(getNumber(parameter))
 //         }
+
+// const getNumber = () => {
+//     let response, number;
+//     do {
+//         if (response !== undefined) alert('Informe um valor válido.');
+//         response = prompt(message).replace(',', '.');
+//         number = response.trim() ? Number(response) : -1;
+//     } while (isNaN(number) || number < 0);               const getString = () => {
+//         let string;
+//         do {
+//             if (response !== undefined) alert('Informe um texto válido');
+//             string = prompt(message);
+//         } while (!isNaN(string || /\s/.test(response) || response === ''));
+//         myObject[nameVar] = string
 //     }
+//     myObject[nameVar] = number
+// };
+// const getString = () => {
+//     let string;
+//     do {
+//         if (response !== undefined) alert('Informe um texto válido');
+//         string = prompt(message);
+//     } while (!isNaN(string || /\s/.test(response) || response === ''));
+//     myObject[nameVar] = string
+// }
+
 //     console.log(myObject)
 // };
 
-    function createVar(dataType, ...text) {
-        let myObject = {};
 
-        // Processa cada texto para extrair nome e mensagem
-        text.forEach((pairText) => {
-            // Divide o par de texto em nome e mensagem com base no delimitador
-            const [nameVar, message] = pairText.split(':');
-            if (!nameVar || !message) return; // Se não for um par válido, ignora
+// colocar dataType em array e gerando propriedades de múltiplos tipos de dados.
+// function createVar(dataColectionReq, dataTypeReq, ...text) {
+//     let myObject = {};
+//     const joinDataType = [
+//         [['prop', 'propriety'], ['s', 'string', 'n'], ['number', 'n'], ['stringnumber', 'stringandnumber']],
+//         ['object:s', 'object:string', 'object:n', 'object:number', 'object:sn', 'object:stringnumber', 'object:stringAndNumber'],
+//         ['array:s', 'array:string', 'array:n', 'array:number', 'array:sn', 'array:stringnumber', 'array:stringAndNumber'],
+//     ];
 
-            if (dataType.toLowerCase() === 'number') {
-                const getNumber = () => {
-                    let response, number;
-                    do {
-                        if (response !== undefined) alert('Informe um valor válido.');
-                        response = prompt(message).replace(',', '.');
-                        number = response.trim() ? Number(response) : -1;
-                    } while (isNaN(number) || number < 0);
-                    myObject[nameVar] = number
-                };
-                getNumber(); 
-            }
-        });
-        return myObject
-    }
+//     // const allData = (isNaN(dataColectionReq) && isNaN(dataTypeReq)) 
+//     // ?  `${dataColectionReq}:${dataTypeReq}` : alert('Informe um valor válido');
+
+//     const allData = (isNaN(dataColectionReq) && isNaN(dataTypeReq)) ? `${dataColectionReq}:${dataTypeReq}` : alert('Informe um valor válido');
+//     const [dataColection, dataType] = allData.toLowerCase().split(':');
+
+//     // const computedDataType = dataType.toLowerCase().split(':');
+
+//     // Processa cada texto para extrair nome e mensagem
+//     text.forEach((pairText) => {
+//         // Divide o par de texto em nome e mensagem com base no delimitador
+//         const [nameVar, message] = pairText.split(':');
+//         if (!nameVar || !message) return; // Se não for um par válido, ignora
+
+//         // If is a prop of object, create a var and atribute the function and create a object of this var. 
+//         if (joinDataType[0][0].includes(dataColection)) {
+//             if (joinDataType[0][2].includes(dataType)) {
+//                 const getNumber = () => {
+//                     let response, number;
+//                     do {
+//                         if (response !== undefined) alert('Informe um valor válido.');
+//                         response = prompt(message).replace(',', '.');
+//                         number = response.trim() ? Number(response) : -1;
+//                     } while (isNaN(number) || number < 0);
+//                     myObject[nameVar] = number
+//                 };
+//                 getNumber();
+//             }
+//             if (joinDataType[0][1].includes(dataType)) {
+//                 const getString = () => {
+//                     let string;
+//                     do {
+//                    display
+//                 getString()
+//             }
+//         }
+//     });
+//     return myObject
+// };
+
+// const valor2 = validatedPrompt('Informe um valor inteiro(2)', { type: 'text', size: 10 });
+display
+const validations = {
+    number: (valor) => isNaN(valor) || valor < 0,
+    string: (valor) => !valor || /\s/.test(valor) || valor === ''
+}
+
+function validatedPrompt(message, options) {
+    let value;
+    do {
+        if (typeof valdisplayue !== undefined) alert('Informe um valor válido.');
+        valor = prompt(message)
+    } while (validations[options.type](value, options));
+}
+
+function createVar(dataColectionReq, dataTypeReq, ...text) {
+    let myObject = {};
+    const myArray = []
+    const joinDataType = [
+        ['s', 'string', 'n'],
+        ['number', 'n'],
+        ['stringnumber', 'stringandnumber'],
+        ['prop', 'property'],
+        ['object', 'o'],
+        ['array', 'a', 'arr'],
+    ];
+
+    // Verifica se dataColectionReq e dataTypeReq são strings válidas
+    // if (typeof dataColectionReq !== 'string' || typeof dataTypeReq !== 'string') {
+    //     alert('Informe um valor válido');
+    //     return;
+    // }
+
+    const allData = `${dataColectionReq}:${dataTypeReq}`.toLowerCase();
+    const [dataColection, dataType] = allData.split(':');
+
+    // Processa cada texto para extrair nome e mensagem
+    text.forEach((pairText) => {
+        // Divide o par de texto em nome e mensagem com base no delimitador
+        const [nameVar, message] = pairText.split(':');
+        if (!nameVar || !message) return // Se não for um par válido, ignora
+
+        // Se for uma propriedade de objeto, cria a variável e atribui o valor apropriado
+        if (joinDataType[1].includes(dataType)) { // Para números
+            const getNumber = () => {
+                let response, number;
+                do {
+                    if (typeof response !== 'undefined') alert('Informe um valor válido.');
+                    response = prompt(message).replace(',', '.');
+                    number = response.trim() ? Number(response) : -1;
+                } while (isNaN(number) || number < 0);
+
+                if (joinDataType[5].includes(dataColection)) {
+                    return myArray.push(string);
+                } else if (joinDataType[3].includes(dataType)) {
+                    return myObject[nameVar] = string;
+                }
+                // if (joinDataType[3].includes(dataColection)) { myObject[nameVar] = number } else if (joinDataType[5].includes(dataColection)) { myArray.push(number) };
+            };
+            return getNumber();
+        }
+        if (joinDataType[0].includes(dataType)) { // Para strings
+            const getString = () => {
+                let response, string;
+                do {
+                    if (typeof string !== 'undefined') alert('Informe um texto válido');
+                    string = prompt(message);
+                } while (!string || /\s/.test(string) || string === '');
+
+                if (joinDataType[5].includes(dataColection)) {
+                    return myArray.push(string);
+                } else if (joinDataType[3].includes(dataType)) {
+                    return myObject[nameVar] = string;
+                }
+            };
+            return getString()
+        }
+    });
+}
 
 
 

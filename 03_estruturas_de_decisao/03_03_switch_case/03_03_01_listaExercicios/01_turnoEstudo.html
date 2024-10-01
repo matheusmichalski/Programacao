@@ -1,6 +1,5 @@
 <meta charset="UTF-8">
 <script src="../../../utils.js"></script>
-<script src="../../../utils.js"></script>
 <script>
     /*
     PROBLEMA: CUMPRIMENTAR DE ACORDO COM O TURNO
@@ -15,7 +14,33 @@
     */
 
     //ENTRADA
+    debugger
+    let matriz = [ 
+        createProp('string',
+        `request: Informe o turno em que você estuda \n
+        Seja M-matutino ou V-Vespertino ou N- Noturno.`.toUpperCase()),
+        {
+            shiftsStudy: '' 
+        }
+    ]
+
+    // switch (matriz.shiftsStudy){
+        // case === 'M':
+    // }
+
+    switch (matriz[0].request) {
+        case 'M':
+            matriz[1] = {shiftsStudy: 'Matutino'}         
+            break;
+        case 'V':
+            matriz[1] = {shiftsStudy: 'Vespertino'}
+            break;
+        default:
+            matriz[1] = {shiftsStudy: 'Noturno'}
+            break;
+    }
     
+    display(`O turno em que você ${matriz[1].shiftsStudy}`)
     
     //PROCESSAMENTO
 

@@ -13,15 +13,20 @@
     */
 
     //ENTRADA
-    const ListaDeTurnosEstudados = createVar('number',
-    'turno: Qual turno você estuda?',)
+
+    const turnoEstudado = prompt('Qual turno você estuda?').toUpperCase()
 
     //PROCESSAMENTO
 
-    alert(ListaDeTurnosEstudados.turno)
+    if (turnoEstudado === 'M') 'Bom dia!'; else if (turnoEstudado === 'V') 'Boa Tarde!'; else if (turnoEstudado === 'N') 'Boa Noite'; else 'Valor Inválido';
 
-    
+    if (['M', 'V', 'N'].includes(turnoEstudado)) {
+        display(` Você estuda no turno: ${turnoEstudado === 'M' ? 'Matutino' : turnoEstudado === 'V' ? 'Vespertino' : 'Noturno'}`);
+    } else {
+        display('Valor Inválido')
+    }
+
+
     //SAÍDA
-    
 
 </script>

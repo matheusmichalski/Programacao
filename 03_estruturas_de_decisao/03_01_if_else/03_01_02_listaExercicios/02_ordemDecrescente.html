@@ -1,40 +1,26 @@
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: ORDEM DECRESCENTE
-    Faça um script que leia três números e mostre-os em ordem decrescente.
-    */
+  /*
+  PROBLEMA: ORDEM DECRESCENTE
+  Faça um script que leia três números e mostre-os em ordem decrescente.
+  */
 
-    //ENTRADA
-    const numbers = createVar('number',
-        'num1: Informe o primeiro número',
-        'num2: Informe o segundo número',
-        'num3: Informe o terceiro/ número',
-    )
+  //ENTRADA
+  let num1;
+  let num2;
+  let num3;
+  do {
+    if ((num1 || num2 || num3) != undefined) alert("Informe números diferentes!");
+    num1 = Number(prompt('Informe um valor(1)'));
+    num2 = Number(prompt('Informe um valor(2)'));
+    num3 = Number(prompt('Informe um valor(2)'));
+  } while (isNaN(num1) || isNaN(num2) || isNaN(num3) || num1 == num2 || num1 == num3 || num2 == num1 || num2 == num3 || num3 == num1 || num3 == num2);
 
-    const orderedNumber = []
+  //PROCESSAMENTO
+  if (num1 > num2 && num2 > num3) {
+    
+  }
 
-    //PROCESSAMENTO
-    if (numbers.num1 > (numbers.num2 & numbers.num3)) {
-        numbers.num1, push(orderedNumber);
-    }
-    else if (numbers.num2 > numbers.num3) {
-        numbers.num2.push(orderedNumber)
-    }
-    else {
-        numbers.num3.push(orderedNumber);
-    }
-    if (number.num2 > (number.num2 & numbers.num3)) {
-        numbers.num2.push(orderedNumber);
-    }
-    else if (numbers.num3 > num2); {
-        numbers.num3.push(orderedNumber);
-    }
-    else {
-        numbers.num2.push(orderedNumber)
-    }
-
-
-    //SAÍDA
+  //SAÍDA
 
 </script>

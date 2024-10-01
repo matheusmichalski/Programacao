@@ -14,6 +14,18 @@
         'valor2: Informe um valor inteiro(2)'
     );
 
+    const pessoa = {
+        idade: validatedPrompt('Informe um valor inteiro(1)', { type: 'number', max: 100, min: 0 }),
+        nome: validatedPrompt('Informe o nome', { type: 'number', max: 100, min: 0 })
+    }
+
+    const array = [
+        validatedPrompt('Informe um valor inteiro(1)', { type: 'number', max: 100, min: 0 })
+    ]
+    // const valor2 = validatedPrompt('Informe um valor inteiro(2)', { type: 'text', size: 10 });
+
+
+
     //PROCESSAMENTO
 
     console.log(meuObjt.valor1, meuObjt.valor2)

@@ -12,11 +12,39 @@
     */
 
     //ENTRADA
-
+    let matriz = [
+        createVar('number',
+            'num: Informe um número natural menos que 1000',
+        ),
+        {
+            centenasValue: 0,
+            dezenasValue: 0,
+            unidadesValue: 0,
+        },
+        // [
+        //     ('Centena' ? centenasValue > 1 : 'Centenas'),
+        //     ('Dezena' ? dezenasValue > 1 : 'Dezenas'),
+        //     ( 'Unidade' ? unidadesText > 1 : 'Unidades')
+        // ]
+    ]
 
     //PROCESSAMENTO
+    matriz[1].centenasValue = Math.floor(matriz[0].num);
+    matriz[1].dezenasValue = Math.floor((matriz[0].num - (centenasValue * 100)) / 10);
+    matriz[1].unidadesValue = Math.floor(matriz[0].num - (centenasValue * 100 && dezenasValue * 50));
 
-    
     //SAÍDA
+
+        for (valor in matriz[1]) {
+            let createDisplay = ``
+            if (!isNaN(valor)) {
+                createDisplay += `<li>${valor[2][valor]}<li>`
+            }
+        }
+    display(`O número total apresentado: ${matriz[0].num}
+    <ul>
+        ${createDisplay}
+    <ul>
+    `)
 
 </script>
