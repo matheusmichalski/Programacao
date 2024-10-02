@@ -14,14 +14,14 @@
 
     //ENTRADA
 
-    const turnoEstudado = prompt('Qual turno você estuda?').toUpperCase()
+    const studiedTurn = reqString('Qual turno você estuda?').toUpperCase()
 
     //PROCESSAMENTO
 
-    if (turnoEstudado === 'M') 'Bom dia!'; else if (turnoEstudado === 'V') 'Boa Tarde!'; else if (turnoEstudado === 'N') 'Boa Noite'; else 'Valor Inválido';
+    if (studiedTurn === 'M') 'Bom dia!'; else if (studiedTurn === 'V') 'Boa Tarde!'; else if (studiedTurn === 'N') 'Boa Noite'; else 'Valor Inválido';
 
-    if (['M', 'V', 'N'].includes(turnoEstudado)) {
-        display(` Você estuda no turno: ${turnoEstudado === 'M' ? 'Matutino' : turnoEstudado === 'V' ? 'Vespertino' : 'Noturno'}`);
+    if (['M', 'V', 'N'].includes(studiedTurn)) {
+        display(` Você estuda no turno: ${studiedTurn === 'M' ? 'Matutino' : studiedTurn === 'V' ? 'Vespertino' : 'Noturno'}`);
     } else {
         display('Valor Inválido')
     }

@@ -1,52 +1,74 @@
-
 function perguntarComCondicao(pergunta, condicao) {
-    let valor = NaN
-    let validadoCondicao = false;
-    while (isNaN(valor) || valor <= 0 || !validadoCondicao) {
-        valor = Number(prompt(pergunta))
-        validadoCondicao = condicao ? eval(`${valor} ${condicao}`) : true;
-    }
-    return valor
+  let valor = NaN;
+  let validadoCondicao = false;
+  while (isNaN(valor) || valor <= 0 || !validadoCondicao) {
+    valor = Number(prompt(pergunta));
+    validadoCondicao = condicao ? eval(`${valor} ${condicao}`) : true;
+  }
+  return valor;
 }
 
 function formatarBrl(valor) {
-    const formatar = valor.toFixed(2).replace('.', ',');
-    return formatar
+  const formatar = valor.toFixed(2).replace(".", ",");
+  return formatar;
 }
 
 function perguntarHorario(pergunta) {
-    let hora = NaN, minuto = NaN, segundo = NaN;
-    while (isNaN(hora) && isNaN(minuto) && isNaN(segundo)) {
-        [hora, minuto, segundo] = prompt(pergunta).split(':')
+  let hora = NaN,
+    minuto = NaN,
+    segundo = NaN;
+  while (isNaN(hora) && isNaN(minuto) && isNaN(segundo)) {
+    [hora, minuto, segundo] = prompt(pergunta).split(":");
 
-        hora = Number(hora)
-        minuto = Number(minuto)
-        segundo = Number(segundo)
-    }
-    return { hora, minuto, segundo }
+    hora = Number(hora);
+    minuto = Number(minuto);
+    segundo = Number(segundo);
+  }
+  return { hora, minuto, segundo };
 }
 
+function toAsk(parameter) {
+  let response, number;
+  do {
+    if (response != undefined) alert("Informe um valor válido.");
 
-// function toAsk(parameter) {
-//     let response, number
-//     do {
-//         if (response != undefined) alert('Informe um valor válido.')
+    response = prompt(parameter).replace(",", ".");
+    number = response.trim() ? Number(response) : -1;
+  } while (isNaN(number) || number < 0);
 
-//         response = prompt(parameter).replace(',', '.')
-//         number = response.trim() ? Number(response) : -1
-//     } while (isNaN(number) || number < 0)
+  return number;
+}
 
-//     return number
-// }
+function reqNumber(parameter) {
+  let response, number;
+  do {
+    if (response != undefined) alert("Informe um valor válido.");
+
+    response = prompt(parameter).replace(",", ".");
+    number = response.trim() ? Number(response) : -1;
+  } while (isNaN(number));
+
+  return number;
+}
+
+function reqString(parameter) {
+  let string;
+  do {
+    if (typeof string !== "undefined") alert("Informe um texto válido");
+    string = prompt(parameter);
+  } while (!string || /\s/.test(string) || string === "");
+
+  return string;
+}
 
 function mostrarSemEstilo(texto) {
-    document.write(texto)
+  document.write(texto);
 }
 
 function display(texto) {
-    const content = document.createElement('div')
+  const content = document.createElement("div");
 
-    content.innerHTML = `
+  content.innerHTML = `
         <style>
             .button {
                 padding: 10px 30px;
@@ -71,46 +93,45 @@ function display(texto) {
                 <button class="button" onclick="location.reload()">Refazer</button>
             <div>
         </div>
-    `
-    document.firstChild.appendChild(content)
+    `;
+  document.firstChild.appendChild(content);
 }
 
 function somar(num1, num2) {
-    return num1 + num2
+  return num1 + num2;
 }
 
 function subtrair(num1, num2) {
-    return num1 - num2
+  return num1 - num2;
 }
 
 function multiplicar(num1, num2) {
-    return num1 * num2
+  return num1 * num2;
 }
 
 function dividir(num1, num2) {
-    return num1 / num2
+  return num1 / num2;
 }
 
 function restoDivisao(num1, num2) {
-    return num1 % num2
+  return num1 % num2;
 }
 
 function calcularAumento(valor, porcentagem) {
-    return valor * ((porcentagem / 100) + 1)
+  return valor * (porcentagem / 100 + 1);
 }
 
 function converterParaCelsius(valorFahrenheit) {
-    return (valorFahrenheit - 32) * 5 / 9
+  return ((valorFahrenheit - 32) * 5) / 9;
 }
 
 function converterParaFahrenheit(valorCelsius) {
-    return (valorCelsius * 9 / 5) + 32
+  return (valorCelsius * 9) / 5 + 32;
 }
 
 function calcularAluguelCarro(diasAlugados, kmRodados) {
-    return (diasAlugados * 60) + (kmRodados * 0.15)
+  return diasAlugados * 60 + kmRodados * 0.15;
 }
-
 
 // const newRound = (value, decimals) => Math.ceil(value * 10 ** decimals) / 10 ** decimals
 
@@ -118,7 +139,6 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 
 // console.log(newRound(test, 2))
 // console.log(newRound(test, 4))
-
 
 // function createVar(qtVar, dataType, ...text) {
 //     // console.log(text)
@@ -167,7 +187,6 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 //     console.log(myObject)
 // };
 
-
 // colocar dataType em array e gerando propriedades de múltiplos tipos de dados.
 // function createVar(dataColectionReq, dataTypeReq, ...text) {
 //     let myObject = {};
@@ -177,7 +196,7 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 //         ['array:s', 'array:string', 'array:n', 'array:number', 'array:sn', 'array:stringnumber', 'array:stringAndNumber'],
 //     ];
 
-//     // const allData = (isNaN(dataColectionReq) && isNaN(dataTypeReq)) 
+//     // const allData = (isNaN(dataColectionReq) && isNaN(dataTypeReq))
 //     // ?  `${dataColectionReq}:${dataTypeReq}` : alert('Informe um valor válido');
 
 //     const allData = (isNaN(dataColectionReq) && isNaN(dataTypeReq)) ? `${dataColectionReq}:${dataTypeReq}` : alert('Informe um valor válido');
@@ -191,7 +210,7 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 //         const [nameVar, message] = pairText.split(':');
 //         if (!nameVar || !message) return; // Se não for um par válido, ignora
 
-//         // If is a prop of object, create a var and atribute the function and create a object of this var. 
+//         // If is a prop of object, create a var and atribute the function and create a object of this var.
 //         if (joinDataType[0][0].includes(dataColection)) {
 //             if (joinDataType[0][2].includes(dataType)) {
 //                 const getNumber = () => {
@@ -218,86 +237,87 @@ function calcularAluguelCarro(diasAlugados, kmRodados) {
 // };
 
 // const valor2 = validatedPrompt('Informe um valor inteiro(2)', { type: 'text', size: 10 });
-display
+display;
 const validations = {
-    number: (valor) => isNaN(valor) || valor < 0,
-    string: (valor) => !valor || /\s/.test(valor) || valor === ''
-}
+  number: (valor) => isNaN(valor) || valor < 0,
+  string: (valor) => !valor || /\s/.test(valor) || valor === "",
+};
 
 function validatedPrompt(message, options) {
-    let value;
-    do {
-        if (typeof valdisplayue !== undefined) alert('Informe um valor válido.');
-        valor = prompt(message)
-    } while (validations[options.type](value, options));
+  let value;
+  do {
+    if (typeof valdisplayue !== undefined) alert("Informe um valor válido.");
+    valor = prompt(message);
+  } while (validations[options.type](value, options));
 }
 
 function createVar(dataColectionReq, dataTypeReq, ...text) {
-    let myObject = {};
-    const myArray = []
-    const joinDataType = [
-        ['s', 'string', 'n'],
-        ['number', 'n'],
-        ['stringnumber', 'stringandnumber'],
-        ['prop', 'property'],
-        ['object', 'o'],
-        ['array', 'a', 'arr'],
-    ];
+  let myObject = {};
+  const myArray = [];
+  const joinDataType = [
+    ["s", "string", "n"],
+    ["number", "n"],
+    ["stringnumber", "stringandnumber"],
+    ["prop", "property"],
+    ["object", "o"],
+    ["array", "a", "arr"],
+  ];
 
-    // Verifica se dataColectionReq e dataTypeReq são strings válidas
-    // if (typeof dataColectionReq !== 'string' || typeof dataTypeReq !== 'string') {
-    //     alert('Informe um valor válido');
-    //     return;
-    // }
+  // Verifica se dataColectionReq e dataTypeReq são strings válidas
+  // if (typeof dataColectionReq !== 'string' || typeof dataTypeReq !== 'string') {
+  //     alert('Informe um valor válido');
+  //     return;
+  // }
 
-    const allData = `${dataColectionReq}:${dataTypeReq}`.toLowerCase();
-    const [dataColection, dataType] = allData.split(':');
+  const allData = `${dataColectionReq}:${dataTypeReq}`.toLowerCase();
+  const [dataColection, dataType] = allData.split(":");
 
-    // Processa cada texto para extrair nome e mensagem
-    text.forEach((pairText) => {
-        // Divide o par de texto em nome e mensagem com base no delimitador
-        const [nameVar, message] = pairText.split(':');
-        if (!nameVar || !message) return // Se não for um par válido, ignora
+  // Processa cada texto para extrair nome e mensagem
+  text.forEach((pairText) => {
+    // Divide o par de texto em nome e mensagem com base no delimitador
+    const [nameVar, message] = pairText.split(":");
+    if (!nameVar || !message) return; // Se não for um par válido, ignora
 
-        // Se for uma propriedade de objeto, cria a variável e atribui o valor apropriado
-        if (joinDataType[1].includes(dataType)) { // Para números
-            const getNumber = () => {
-                let response, number;
-                do {
-                    if (typeof response !== 'undefined') alert('Informe um valor válido.');
-                    response = prompt(message).replace(',', '.');
-                    number = response.trim() ? Number(response) : -1;
-                } while (isNaN(number) || number < 0);
+    // Se for uma propriedade de objeto, cria a variável e atribui o valor apropriado
+    if (joinDataType[1].includes(dataType)) {
+      // Para números
+      const getNumber = () => {
+        let response, number;
+        do {
+          if (typeof response !== "undefined")
+            alert("Informe um valor válido.");
+          response = prompt(message).replace(",", ".");
+          number = response.trim() ? Number(response) : -1;
+        } while (isNaN(number) || number < 0);
 
-                if (joinDataType[5].includes(dataColection)) {
-                    return myArray.push(string);
-                } else if (joinDataType[3].includes(dataType)) {
-                    return myObject[nameVar] = string;
-                }
-                // if (joinDataType[3].includes(dataColection)) { myObject[nameVar] = number } else if (joinDataType[5].includes(dataColection)) { myArray.push(number) };
-            };
-            return getNumber();
+        if (joinDataType[5].includes(dataColection)) {
+          return myArray.push(string);
+        } else if (joinDataType[3].includes(dataType)) {
+          return (myObject[nameVar] = string);
         }
-        if (joinDataType[0].includes(dataType)) { // Para strings
-            const getString = () => {
-                let response, string;
-                do {
-                    if (typeof string !== 'undefined') alert('Informe um texto válido');
-                    string = prompt(message);
-                } while (!string || /\s/.test(string) || string === '');
+        // if (joinDataType[3].includes(dataColection)) { myObject[nameVar] = number } else if (joinDataType[5].includes(dataColection)) { myArray.push(number) };
+      };
+      return getNumber();
+    }
+    if (joinDataType[0].includes(dataType)) {
+      // Para strings
+      const getString = () => {
+        let response, string;
+        do {
+          if (typeof string !== "undefined") alert("Informe um texto válido");
+          string = prompt(message);
+        } while (!string || /\s/.test(string) || string === "");
 
-                if (joinDataType[5].includes(dataColection)) {
-                    return myArray.push(string);
-                } else if (joinDataType[3].includes(dataType)) {
-                    return myObject[nameVar] = string;
-                }
-            };
-            return getString()
+        if (joinDataType[5].includes(dataColection)) {
+          return myArray.push(string);
+        } else if (joinDataType[3].includes(dataType)) {
+          return (myObject[nameVar] = string);
         }
-    });
+      };
+      return getString();
+    }
+  });
 }
-
-
 
 // function teste(qtVar, dataType, ...text) {
 //     console.log(text);
@@ -332,8 +352,6 @@ function createVar(dataColectionReq, dataTypeReq, ...text) {
 //         }
 //     }
 // }
-
-
 
 // while (isNaN(createVar) || createVar == "") {
 //     alert("Informe um número!");

@@ -6,21 +6,37 @@
   */
 
   //ENTRADA
-  let num1;
-  let num2;
-  let num3;
-  do {
-    if ((num1 || num2 || num3) != undefined) alert("Informe números diferentes!");
-    num1 = Number(prompt('Informe um valor(1)'));
-    num2 = Number(prompt('Informe um valor(2)'));
-    num3 = Number(prompt('Informe um valor(2)'));
-  } while (isNaN(num1) || isNaN(num2) || isNaN(num3) || num1 == num2 || num1 == num3 || num2 == num1 || num2 == num3 || num3 == num1 || num3 == num2);
+
+  const num1 = reqNumber('Informe um número(1)')
+  const num2 = reqNumber('Informe um número(2)')
+  const num3 = reqNumber('Informe um número(3)')
+  const orderedNumbers = []
 
   //PROCESSAMENTO
-  if (num1 > num2 && num2 > num3) {
-    
+
+  if (num1 <= num2 && num1 <= num3) {
+    orderedNumbers.push(num1);
+    if (num2 <= num3) {
+      orderedNumbers.push(num2, num3);
+    } else {
+      orderedNumbers.push(num3, num2);
+    }
+  } else if (num2 <= num1 && num2 <= num3) {
+    orderedNumbers.push(num2);
+    if (num1 <= num3) {
+      orderedNumbers.push(num1, num3);
+    } else {
+      orderedNumbers.push(num3, num1);
+    }
+  } else {
+    orderedNumbers.push(num3);
+    if (num1 <= num2) {
+      orderedNumbers.push(num1, num2);
+    } else {
+      orderedNumbers.push(num2, num1);
+    }
   }
 
   //SAÍDA
-
+  display(`Os números ordenados são: ${orderedNumbers.join(', ')}.`)
 </script>
