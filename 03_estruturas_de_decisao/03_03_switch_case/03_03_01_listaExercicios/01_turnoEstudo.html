@@ -14,37 +14,28 @@
     */
 
     //ENTRADA
-    debugger
-    let matriz = [ 
-        createProp('string',
-        `request: Informe o turno em que você estuda \n
-        Seja M-matutino ou V-Vespertino ou N- Noturno.`.toUpperCase()),
-        {
-            shiftsStudy: '' 
-        }
-    ]
 
-    // switch (matriz.shiftsStudy){
-        // case === 'M':
-    // }
+    const shiftsStudy = reqString(`request: Informe o turno em que você estuda \n   
+    Seja M-matutino ou V-Vespertino ou N- Noturno.`).toUpperCase()
 
-    switch (matriz[0].request) {
+    let response = 'Você estuda no turno:'
+
+    //PROCESSAMENTO
+    switch (shiftsStudy) {
         case 'M':
-            matriz[1] = {shiftsStudy: 'Matutino'}         
+            response += 'Matutino'
             break;
         case 'V':
-            matriz[1] = {shiftsStudy: 'Vespertino'}
+            response += 'Verpertino'
             break;
+        case 'N':
+            response += 'Noturno'
         default:
-            matriz[1] = {shiftsStudy: 'Noturno'}
+            response = 'Valor inválido'
             break;
     }
-    
-    display(`O turno em que você ${matriz[1].shiftsStudy}`)
-    
-    //PROCESSAMENTO
 
-    
     //SAÍDA
+    display(response)
 
 </script>

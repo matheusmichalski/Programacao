@@ -1,17 +1,32 @@
 <meta charset="UTF-8">
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: VOGAL
-    Construa um programa que leia um caractere e informe se este caractere é uma vogal.
-    */
+  /*
+  PROBLEMA: VOGAL
+  Construa um programa que leia um caractere e informe se este caractere é uma vogal.
+  */
 
-    // ENTRADA
+  // ENTRADA
 
-    
-    // PROCESSAMENTO
+  const character = reqString('Informe um caractere.').toLowerCase();
+  let response = 'O seu caractere ';
 
-    
-    // SAÍDA
+  // PROCESSAMENTO
+
+  switch (character) {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+      response += 'é uma vogal.';
+      break;
+    default:
+      response += 'não é uma vogal.';
+      break;
+  }
+
+  // SAÍDA
+  display(response);
 
 </script>

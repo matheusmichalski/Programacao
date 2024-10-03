@@ -1,17 +1,30 @@
 <meta charset="UTF-8">
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: VERIFICAR NÚMERO PAR OU ÍMPAR
-    Faça um script que peça um número inteiro e determine se ele é par ou ímpar.
-    */
+  /*
+  PROBLEMA: VERIFICAR NÚMERO PAR OU ÍMPAR
+  Faça um script que peça um número inteiro e determine se ele é par ou ímpar.
+  */
+  let int;
+  //ENTRADA
+  do {
+    if (int != undefined) alert('Informe um Inteiro válido.')
+    int = reqNumber('Informe um inteiro');
+  } while ((int % 1) > 0);
 
-    //ENTRADA
+  let response = 'Seu número é: '
+  //PROCESSAMENTO
 
-    
-    //PROCESSAMENTO
+  switch (int) {
+    case (int % 2) === 0:
+      response += 'Par'
+      break;
+    default:
+      response += 'Ímpar'
+      break;
+  }
 
-    
-    //SAÍDA
+  //SAÍDA
+  display(response)
 
 </script>
