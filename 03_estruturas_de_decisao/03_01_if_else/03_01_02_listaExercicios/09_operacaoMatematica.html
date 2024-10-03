@@ -9,19 +9,48 @@
     */
 
     //ENTRADA
-    let matriz = [ createVar('number',
-        'num1: Informe dois valores(1):',
-        'num2: Informe dois valores(2):',
-    ),
-    {
-        
-    }
 
-    ]
+    const int1 = reqNumber('Informe um número(1)');
+    const int2 = reqNumber('Informe um número(2)');
+    const performedOperation = reqString(`Qual operação você deseja realizar?\n
+    seja: subtração: -, soma: +, divisão: /, multiplicação: *, potenciação: ** ,radiciação: /**`);
 
     //PROCESSAMENTO
 
-    
+    let responseOperation;
+    const operations = {
+        addition: '+',
+        subtraction: '-',
+        multiplication: '*',
+        division: '/',
+        potentiation: '**',
+        rooting: '/**'
+    }
+
+    if (Object.values(operations).includes(performedOperation)) {
+        if (performedOperation == operations.addition) {
+            responseOperation = int1 + int2;
+        } else if (performedOperation == operations.subtraction) {
+            responseOperation = int1 - int2;
+        } else if (performedOperation == operations.multiplication) {
+            responseOperation = int1 * int2
+        } else if (performedOperation == operations.division) {
+            responseOperation = int1 / int2
+        } else if (performedOperation == operations.potentiation) {
+            responseOperation = int1 ** int2
+        } else if (performedOperation == operations.rooting) {
+            responseOperation == int1 ** (1 / int2)
+        }
+    } else {
+        alert('Valor Inválido')
+    }
+
     //SAÍDA
+    display(`O resultado com a operação ${performedOperation}: ${responseOperation};<br>
+    O seu numero é ${(responseOperation % 2 == 0) ? 'par' : 'impar'};<br>
+    ${(responseOperation / -1) > 0 ? 'Positivo' : 'Negativo'};
+    ${(responseOperation % 1) == 0 ? 'Inteiro' : 'Decimal'};
+   `
+    )
 
 </script>

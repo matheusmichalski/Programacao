@@ -20,44 +20,38 @@
 
 	let response = `Para ${totalValue}, serão necessárias:<br>`;
 
-	// Calculate number of 100 notes
 	if (totalValue >= 100) {
 		notes100Value = Math.floor(totalValue / 100);
 		totalValue -= notes100Value * 100;
 		response += `${notes100Value} notas de 100<br>`;
 	}
 
-	// Calculate number of 50 notes
 	if (totalValue >= 50) {
 		notes50Value = Math.floor(totalValue / 50);
 		totalValue -= notes50Value * 50;
 		response += `${notes50Value} notas de 50<br>`;
 	}
 
-	// Calculate number of 10 notes
 	if (totalValue >= 10) {
 		notes10Value = Math.floor(totalValue / 10);
 		totalValue -= notes10Value * 10;
 		response += `${notes10Value} notas de 10<br>`;
 	}
 
-	// Calculate number of 5 notes
 	if (totalValue >= 5) {
 		notes5Value = Math.floor(totalValue / 5);
 		totalValue -= notes5Value * 5;
 		response += `${notes5Value} notas de 5<br>`;
 	}
 
-	// Calculate number of 1 notes
 	if (totalValue >= 1) {
 		notes1Value = totalValue; // Remaining amount is the number of 1 notes
 		response += `${notes1Value} notas de 1<br>`;
 	}
 
-	// Display the result
+	//SAÍDA
 	display(response);
 
 
 
-	//SAÍDA
 </script>

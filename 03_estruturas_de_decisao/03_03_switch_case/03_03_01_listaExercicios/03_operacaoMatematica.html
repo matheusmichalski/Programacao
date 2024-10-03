@@ -45,6 +45,11 @@
   }
 
   //SAÍDA
-  display(`O resultado com a operação ${performedOperation}: ${responseOperation};`)
+  display(`O resultado com a operação ${performedOperation}: ${responseOperation};<br>
+    O seu numero é ${(responseOperation % 2 == 0) ? 'par' : 'impar'};<br>
+    ${(responseOperation / -1) > 0 ? 'Positivo' : 'Negativo'}<br>
+    ${(responseOperation % 1) == 0 ? 'Inteiro' : 'Decimal'}
+   `
+  )
 
 </script>
