@@ -3,48 +3,40 @@
     /*
     PROBLEMA: NÚMERO DE CENTENAS, DEZENAS E UNIDADES
     Faça um script que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, dezenas e unidades do mesmo.
-    Observando os termos no plural a colocação do "e", da vírgula entre outros.
+    Observando os termos no plural e a colocação do "e", da vírgula entre outros.
     
     Exemplo:
     326 = 3 centenas, 2 dezenas e 6 unidades
     12 = 1 dezena e 2 unidades
-    Testar com: 326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
+    Testar com: 326, 300, 100, 320, 310, 305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
     */
 
     //ENTRADA
-    let matriz = [
-        createVar('number',
-            'num: Informe um número natural menos que 1000',
-        ),
-        {
-            centenasValue: 0,
-            dezenasValue: 0,
-            unidadesValue: 0,
-        },
-        // [
-        //     ('Centena' ? centenasValue > 1 : 'Centenas'),
-        //     ('Dezena' ? dezenasValue > 1 : 'Dezenas'),
-        //     ( 'Unidade' ? unidadesText > 1 : 'Unidades')
-        // ]
-    ]
+    const number = reqNumber('Informe um número natural menor que 1000');
 
-    //PROCESSAMENTO
-    matriz[1].centenasValue = Math.floor(matriz[0].num);
-    matriz[1].dezenasValue = Math.floor((matriz[0].num - (centenasValue * 100)) / 10);
-    matriz[1].unidadesValue = Math.floor(matriz[0].num - (centenasValue * 100 && dezenasValue * 50));
+    if (number < 0 || number >= 1000) {
+        alert('Por favor, informe um número natural menor que 1000.');
+    } else {
+        //PROCESSAMENTO
+        const centenasValue = Math.floor(number / 100);
+        const dezenasValue = Math.floor((number % 100) / 10);
+        const unidadesValue = number % 10;
 
-    //SAÍDA
+        //SAÍDA
+        let numberDivision = [];
 
-        for (valor in matriz[1]) {
-            let createDisplay = ``
-            if (!isNaN(valor)) {
-                createDisplay += `<li>${valor[2][valor]}<li>`
-            }
+        if (centenasValue > 0) {
+            numberDivision.push(`${centenasValue} centena${centenasValue > 1 ? 's' : ''}`);
         }
-    display(`O número total apresentado: ${matriz[0].num}
-    <ul>
-        ${createDisplay}
-    <ul>
-    `)
+        if (dezenasValue > 0) {
+            numberDivision.push(`${dezenasValue} dezena${dezenasValue > 1 ? 's' : ''}`);
+        }
+        if (unidadesValue > 0) {
+            numberDivision.push(`${unidadesValue} unidade${unidadesValue > 1 ? 's' : ''}`);
+        }
 
+        const response = numberDivision.join(' e ');
+
+        display(`O número total apresentado: ${number} = ${response}`);
+    }
 </script>

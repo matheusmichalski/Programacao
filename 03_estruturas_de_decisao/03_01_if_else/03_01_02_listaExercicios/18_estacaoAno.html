@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script src="../../../utils.js"></script>
 <script>
     /*
@@ -7,11 +8,36 @@
     */
 
     //ENTRADA
-
+    const currentMonth = reqString('Qual o mês atual?').toLowerCase();
+    const localHemisphere = reqString('Qual hemisfério você está (norte ou sul)?').toLowerCase();
 
     //PROCESSAMENTO
+    let season;
 
-    
+    if (localHemisphere === 'norte') {
+        if (['dezembro', 'janeiro', 'fevereiro'].includes(currentMonth)) {
+            season = 'Inverno';
+        } else if (['março', 'abril', 'maio'].includes(currentMonth)) {
+            season = 'Primavera';
+        } else if (['junho', 'julho', 'agosto'].includes(currentMonth)) {
+            season = 'Verão';
+        } else if (['setembro', 'outubro', 'novembro'].includes(currentMonth)) {
+            season = 'Outono';
+        }
+    } else if (localHemisphere === 'sul') {
+        if (['dezembro', 'janeiro', 'fevereiro'].includes(currentMonth)) {
+            season = 'Verão';
+        } else if (['março', 'abril', 'maio'].includes(currentMonth)) {
+            season = 'Outono';
+        } else if (['junho', 'julho', 'agosto'].includes(currentMonth)) {
+            season = 'Inverno';
+        } else if (['setembro', 'outubro', 'novembro'].includes(currentMonth)) {
+            season = 'Primavera';
+        }
+    } else {
+        season = 'Estação não encontrada';
+    }
+
     //SAÍDA
-
+    console.log(`A estação do ano no hemisfério ${localHemisphere} em ${currentMonth} é: ${season}`);
 </script>

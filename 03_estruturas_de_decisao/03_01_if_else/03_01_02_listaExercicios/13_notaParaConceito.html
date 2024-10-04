@@ -13,11 +13,27 @@
     */
 
     //ENTRADA
+    const schoolGrade = reqNumber('Informe a nota do aluno');
 
-    
     //PROCESSAMENTO
+    let gradeConcept;
 
-    
+    if (schoolGrade >= 9.0 && schoolGrade <= 10.0) {
+        gradeConcept = 'A';
+    } else if (schoolGrade >= 8.0 && schoolGrade < 9.0) {
+        gradeConcept = 'B';
+    } else if (schoolGrade >= 7.0 && schoolGrade < 8.0) {
+        gradeConcept = 'C';
+    } else if (schoolGrade >= 6.0 && schoolGrade < 7.0) {
+        gradeConcept = 'D';
+    } else if (schoolGrade >= 0 && schoolGrade < 6.0) {
+        gradeConcept = 'E';
+    } else {
+        alert('Nota inválida. Informe uma nota entre 0 e 10.');
+    }
+
     //SAÍDA
-
+    if (gradeConcept) {
+        display(`O conceito do aluno é: ${gradeConcept}`);
+    }
 </script>

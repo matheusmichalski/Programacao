@@ -11,11 +11,23 @@
     */
 
     //ENTRADA
+    const reqPrice = reqNumber('Informe o preço de um produto')
 
-    
+
     //PROCESSAMENTO
+    let resPrice = reqPrice
 
-    
+    if (reqPrice >= 280) {
+        resPrice *= 1.2
+    } else if (reqPrice <= 700) {
+        resPrice *= 1.15
+    } else if (reqPrice <= 1500) {
+        resPrice *= 1.1
+    } else {
+        resPrice *= 1.05
+    }
+
+
     //SAÍDA
-
+    display(`O valor do produto com o aumento de R$${reqPrice} com o aumento de ${((resPrice / reqPrice) * 100) - 100}% é R$${resPrice}`)
 </script>

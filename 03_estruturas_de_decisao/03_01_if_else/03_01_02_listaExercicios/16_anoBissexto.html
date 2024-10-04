@@ -8,18 +8,13 @@
 
     //ENTRADA
 
-    debugger
+    const currentYear = reqNumber('Informe um ano.')
 
-    const myObject = createVar('prop','number',
-    'teste:informe um valor',
-    );
-
-    console.log(myObject.teste)
-
-    
     //PROCESSAMENTO
+    if (currentYear % 4 === 0) display(`O ano ${currentYear} é bissexto`);
+    else display(`O ano ${currentYear} não é bissexto`);
 
-    
+
     //SAÍDA
 
 </script>

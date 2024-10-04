@@ -1,25 +1,46 @@
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: DESCONTO COMBUSTÍVEL
-    Um posto está vendendo combustíveis com a seguinte tabela de descontos:
-    Álcool:
-    - até 20 litros, desconto de 3% por litro
-    - acima de 20 litros, desconto de 5% por litro
+  /*
+  PROBLEMA: DESCONTO COMBUSTÍVEL
+  Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+  Álcool:
+  - até 20 litros, desconto de 3% por litro
+  - acima de 20 litros, desconto de 5% por litro
 
-    Gasolina:
-    - até 20 litros, desconto de 4% por litro
-    - acima de 20 litros, desconto de 6% por litro
-    
-    Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 6,50 o preço do litro do álcool é R$ 6,10.
-    */
+  Gasolina:
+  - até 20 litros, desconto de 4% por litro
+  - acima de 20 litros, desconto de 6% por litro
+  
+  Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 6,50 o preço do litro do álcool é R$ 6,10.
+  */
 
-    //ENTRADA
+  //ENTRADA
+  const litersFuel = reqNumber('Quantos litros de combustível foi vendido?')
+  let tipeFuel = reqString('Qual o tipo de combustível(A-álcool, G-gasolina)').toUpperCase()
+  let calcFuel;
+
+  //PROCESSAMENTO
+  if (tipeFuel == 'A') {
+    tipeFuel = 'álcool';
+    if (litersFuel <= 20) {
+      calcFuel = (litersFuel * 6.10) - ((litersFuel * 6.10) * 0.03);
+    } else {
+      calcFuel = (litersFuel * 6.10) - ((litersFuel * 6.10) * 0.05);
+    }
+  } else if (tipeFuel == 'G') {
+    tipeFuel = 'gasolina';
+    if (litersFuel <= 20) {
+      calcFuel = (litersFuel * 6.50) - ((litersFuel * 6.50) * 0.04);
+    } else {
+      calcFuel = (litersFuel * 6.50) - ((litersFuel * 6.50) * 0.06);
+    }
+  } else {
+    display('Tipo de combustível inválido');
+    return;
+  }
 
 
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
+  //SAÍDA
+  display(`Valor de ${litersFuel.toFixed(2).replace('.', '.')} litros de combustível do tipo ${tipeFuel} é ${calcFuel.toFixed(2).replace('.', '.')}`)
 
 </script>

@@ -1,47 +1,79 @@
 <meta charset="UTF-8">
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: ESTAÇÃO DO ANO
-    Faça um script que pergunte para a pessoa em qual hemisfério ela está e qual o mês atual.
-    De acordo com as respostas, informe qual a estação do ano correspondente.
-    */
+  /*
+  PROBLEMA: ESTAÇÃO DO ANO
+  Faça um script que pergunte para a pessoa em qual hemisfério ela está e qual o mês atual.
+  De acordo com as respostas, informe qual a estação do ano correspondente.
+  */
 
-    //ENTRADA
-    const currentMonth = reqString('Qual o mês atual?').toLowerCase()
-    const localHemisphere = reqString('Qual o hemifério você está?').toLowerCase()
-    const months = {
-        1: 'Janeiro',
-        2: 'Fevereiro',
-        3: 'Março',
-        4: 'Abril',
-        5: 'Maio',
-        6: 'Junho',
-        7: 'Julho',
-        8: 'Agosto',
-        9: 'Setembro',
-        10: 'Outubro',
-        11: 'Novembro',
-        12: 'Dezembro'
-    };
+  //ENTRADA
+  const currentMonth = reqString('Qual o mês atual?').toLowerCase();
+  const localHemisphere = reqString('Qual hemisfério você está (norte ou sul)?').toLowerCase();
 
-    //PROCESSAMENTO
+  //PROCESSAMENTO
+  let season;
 
-    for (let i = 0; i > 12; i++) {
+  switch (localHemisphere) {
+    case 'norte':
+      switch (currentMonth) {
+        case 'dezembro':
+        case 'janeiro':
+        case 'fevereiro':
+          season = 'Inverno';
+          break;
+        case 'março':
+        case 'abril':
+        case 'maio':
+          season = 'Primavera';
+          break;
+        case 'junho':
+        case 'julho':
+        case 'agosto':
+          season = 'Verão';
+          break;
+        case 'setembro':
+        case 'outubro':
+        case 'novembro':
+          season = 'Outono';
+          break;
+        default:
+          season = 'Mês inválido';
+      }
+      break;
 
-        switch (currentMonth) {
-            case value:
+    case 'sul':
+      switch (currentMonth) {
+        case 'dezembro':
+        case 'janeiro':
+        case 'fevereiro':
+          season = 'Verão';
+          break;
+        case 'março':
+        case 'abril':
+        case 'maio':
+          season = 'Outono';
+          break;
+        case 'junho':
+        case 'julho':
+        case 'agosto':
+          season = 'Inverno';
+          break;
+        case 'setembro':
+        case 'outubro':
+        case 'novembro':
+          season = 'Primavera';
+          break;
+        default:
+          season = 'Mês inválido';
+      }
+      break;
 
-                break;
+    default:
+      season = 'Estação do ano não encontrada';
+      break;
+  }
 
-            default:
-                break;
-        }
-
-
-
-    }
-
-    //SAÍDA
-
+  //SAÍDA
+  display(`A estação do ano no hemisfério ${localHemisphere} em ${currentMonth} é: ${season}`);
 </script>
