@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+  /*
+
+  QUESTÃO ÚNICA
+Faça um código em Javascript que receba do usuário as seguintes informações, nesta ordem:
+>>> o nome completo do empregado;
+>>> seu número de CPF;
+>>> o salário bruto desse empregado;
+>>> o código do seu cargo.
+OBS: A varíavel utilizada para receber o nome completo do empregado deve ser a matricula do aluno que esta fazendo a prova, ou seja a tua matrícula.
+  
+Independentemente do cargo do empregado, todos terão descontado do seu salário bruto, o imposto de previdência social, que equivale a 12,5% do salário bruto.
+  
+Como exceção, o empregado não terá o desconto deste imposto apenas se seu salário bruto for inferior a R$ 1.412,00, que é o valor do salário mínimo atualmente.
+  
+Outro desconto que usa o salário bruto como base é a contribuição sindical, onde seu valor varia conforme a tabela de cargos abaixo. Caso o empregado não possua um cargo apresentado nesta tabela, será descontado um valor fixo de R$ 50,00 deste empregado como contribuição sindical. Neste caso, todos terão algum desconto no seu salário para o sindicato.
+  
+Após o processamento dos cálculos acima descritos, apresente apenas as informações abaixo separando-as por linha individual ('<br>'), obedecendo esta sequência:
+>> linha 1 - o nome completo do empregado e seu CPF;
+>> linha 2 - o valor em reais de contribuição sindical;
+>> linha 3 - o valor em reais do desconto para o imposto de previdência social;
+>> linha 4 - o salário final do empregado após todos os descontos.
+>> linha 5 - o salário antigo e novo salário final do empregado após aplicar o percentual de aumento.
+  
+*/
+
+  debugger
+
+  //Entrada
+  const M2024311940 = prompt('Qual o nome completo do empregado?');
+  const cpfEmpregado = prompt('Qual o cpf do empregado?');
+  let salarioBruto = Number(prompt('Qual o salário bruto do empregado?'));
+  const codigoCargo = prompt('Qual o código do seu cargo?').toLowerCase();
+  const codigosDeCargoCadastrados = ['abc123', '123abc', 'xyz999', '9a8b7c', 'log456']
+  let resposta, contribuicaoSindical, descontoPrevidenciaSocial, salarioFinal, aumentoSalario;
+  //Processamento
+  if (codigosDeCargoCadastrados.includes(codigoCargo)) {
+    if (codigoCargo == codigosDeCargoCadastrados[0]) {
+      aumentoSalario = (salarioBruto * 0.08); //Adicionando aumento no salário bruto
+      contribuicaoSindical = (salarioBruto * 0.075); //Adicionando desconto da previdência
+    } else if (codigoCargo == codigosDeCargoCadastrados[1]) {
+      aumentoSalario = (salarioBruto * 0.075); //Adicionando aumento no salário bruto
+      contribuicaoSindical = (salarioBruto * 0.065); //Adicionando desconto da previdência
+    } else if (codigoCargo == codigosDeCargoCadastrados[2]) {
+      aumentoSalario = (salarioBruto * 0.09); //Adicionando aumento no salário bruto
+      contribuicaoSindical = (salarioBruto * 0.05); //Adicionando desconto da previdência
+    } else if (codigoCargo == codigosDeCargoCadastrados[3]) {
+      aumentoSalario = (salarioBruto * 0.05); //Adicionando aumento no salário bruto
+      contribuicaoSindical = (salarioBruto * 0.065); //Adicionando desconto da previdência
+    } else if (codigoCargo == codigosDeCargoCadastrados[4]) {
+      aumentoSalario = (salarioBruto * 0.06); //Adicionando aumento no salário bruto
+      contribuicaoSindical = (salarioBruto * 0.03); //Adicionando desconto da previdência
+    }
+  } else {
+    aumentoSalario += 200
+    contribuicaoSindical -= 50
+  }
+  if (salarioBruto > 1412) { descontoPrevidenciaSocial = (salarioBruto + aumentoSalario) * 0.125 } else descontoPrevidenciaSocial = 0
+
+
+  salarioFinal = salarioBruto - (contribuicaoSindical + descontoPrevidenciaSocial)
+
+  // for (let i = 0; codigosDeCargoCadastrados > i; i++) {;
+  // }
+
+  resposta = `${M2024311940}, ${cpfEmpregado} <br>
+  R$${contribuicaoSindical.toFixed(2).replace('.', ',')}<br>
+  R$${descontoPrevidenciaSocial.toFixed(2).replace('.', ',')}<br>
+  R$${salarioFinal.toFixed(2).replace('.', ',')}<br>
+  R$${salarioBruto.toFixed(2).replace('.', ',')},R$${salarioFinal.toFixed(2).replace('.', ',')}  
+  `
+
+  /*
+  //Saída 
+  Após o processamento dos cálculos acima descritos, apresente apenas as informações abaixo separando-as por linha individual ('<br>'), obedecendo esta sequência:
+>> linha 1 - o nome completo do empregado e seu CPF;
+>> linha 2 - o valor em reais de contribuição sindical;
+>> linha 3 - o valor em reais do desconto para o imposto de previdência social;
+>> linha 4 - o salário final do empregado após todos os descontos.
+>> linha 5 - o salário antigo e novo salário final do empregado após aplicar o percentual de aumento.
+*/
+
+  document.write(resposta)
+
+</script>
