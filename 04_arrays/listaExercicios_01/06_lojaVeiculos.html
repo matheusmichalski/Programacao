@@ -1,24 +1,47 @@
 <meta charset="UTF-8" />
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: LOJA DE VEÍCULOS
-    Crie os seguintes arrays:
-    let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
-    let cassosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
-    let carrosHatch = ["308", "Focus", "i30"];
-    
-    Peça para o usuário informar mais três veículos para serem inseridos na lista. Para inserir na lista correta, peça também para o usuário identificar o tipo de veículo que deseja inserir, se é SUV, Sedan ou Hatch.
+  /*
+  PROBLEMA: LOJA DE VEÍCULOS
+  Crie os seguintes arrays:
+  let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+  let cassosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
+  let carrosHatch = ["308", "Focus", "i30"];
+  
+  Peça para o usuário informar mais três veículos para serem inseridos na lista. Para inserir na lista correta, peça também para o usuário identificar o tipo de veículo que deseja inserir, se é SUV, Sedan ou Hatch.
 
-    Apresente a lista final de cada tipo de veículo.
-    */
+  Apresente a lista final de cada tipo de veículo.
+  */
 
-    //ENTRADA
+  //ENTRADA
+  const carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+  const cassosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
+  const carrosHatch = ["308", "Focus", "i30"];
+  //PROCESSAMENTO
 
+  for (let i = 0; i < 3; i++) {
+    const newCar = prompt('Informe o nome dos veículo que deseja inserir.');
+    const type = prompt('Informe o tipo de veículo que deseja inserir, se é SUV, Sedan ou Hatch.').toLowerCase();
+    switch (type) {
+      case 'suv':
+        carrosSUV.push(newCar);
+        break;
+      case 'sedan':
+        cassosSedan.push(newCar);
+        break;
+      case 'hatch':
+        carrosHatch.push(newCar);
+        break;
+      default:
+        i--;
+        alert('Tipo de veículo inválido');
+        break;
+    }
+  }
+  //SAÍDA
 
-    //PROCESSAMENTO
-
-
-    //SAÍDA
-
+  display(`Novos Listas: <br>
+  SUV: ${carrosSUV.join(', ')}<br>
+  Sedan: ${cassosSedan.join(', ')}<br>
+  Hatch: ${carrosHatch.join(', ')}`);
 </script>

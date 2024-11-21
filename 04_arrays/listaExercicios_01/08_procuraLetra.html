@@ -10,11 +10,27 @@
     */
 
     //ENTRADA
+    const word = prompt('Digite uma palavra:').trim().toLowerCase().split(' ')[0];
+    const letter = prompt('Digite uma letra:').toLowerCase().split('')[0];
+    const allIndexLetter = [];
 
-
+    let index = word.indexOf(letter); // Pega a primeira ocorrência
+    while (index !== -1) {
+        allIndexLetter.push(index + 1); // Salva o índice (posição iniciando em 1)
+        index = word.indexOf(letter, index + 1); // Continua a busca a partir do próximo caractere
+    }
     //PROCESSAMENTO
-
+    let response = '';
+    if (word.includes(letter)) {
+        response = (`A letra "${letter}" existe na palavra "${word}" e está na posição ${allIndexLetter.length < 1 ? allIndexLetter : allIndexLetter.join(', ')}.`)
+    } else {
+        response = (`A letra ${letter.toUpperCase()} não existe na palavra ${word.toUpperCase()}.`)
+    }
 
     //SAÍDA
+    display(response);
+
+
+
 
 </script>

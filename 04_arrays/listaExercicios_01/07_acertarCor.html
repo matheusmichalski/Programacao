@@ -14,12 +14,26 @@
     */
 
     //ENTRADA
-
+    const nomeCores = ["azul", "amarelo", "verde", "branco", "preto", "marrom", "cinza"];
+    const informedColor = prompt('Informe uma cor:').toLowerCase();
+    const randomColor = Math.floor(Math.random() * 7);
 
     //PROCESSAMENTO
+    let response = '';
 
+    if (nomeCores.includes(informedColor)) {
+        if (nomeCores[randomColor] === informedColor) {
+            response = (`PARABÉNS! VOCÊ ESTÁ COM SORTE NA COR: ${informedColor.toUpperCase()}!`);
+        } else {
+            response = ('NÃO FOI DESSA VEZ... TENTE NOVAMENTE!');
+        }
+    } else {
+        response = ('Cor inválida!');
+
+    }
 
     //SAÍDA
+    display(response);
 
 
     /*

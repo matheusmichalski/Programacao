@@ -1,20 +1,29 @@
 <meta charset="UTF-8" />
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: REMOVER SUV
-    Crie o seguinte array:
-    let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
-    Pergunte ao usuário qual carro deseja REMOVER da lista.
-    Apresente a lista antiga de SUVs e a nova lista, após a remoção do veículo solicitado.
-    */
+  /*
+  PROBLEMA: REMOVER SUV
+  Crie o seguinte array:
+  let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+  Pergunte ao usuário qual carro deseja REMOVER da lista.
+  Apresente a lista antiga de SUVs e a nova lista, após a remoção do veículo solicitado.
+  */
 
-    //ENTRADA
+  // ENTRADA
+  let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+  const carrosSUVtoLowercase = carrosSUV.map(element => element.toLowerCase());
+  const removedCar = prompt(`Qual carro você deseja remover?
+  Carros: ${carrosSUV.join(', ')}`);
+
+  // PROCESSAMENTO
+  const removedCarLowercase = removedCar.toLowerCase();
+  const index = carrosSUVtoLowercase.indexOf(removedCarLowercase);
+  carrosSUVtoLowercase.splice(index, 1);
+  // SAÍDA
+  display(`${removedCar} removido com sucesso:<br>
+Lista antiga: ${carrosSUV.join(', ')}<br>
+Nova lista: ${carrosSUVtoLowercase.join(', ')}`);
 
 
-    //PROCESSAMENTO
-
-
-    //SAÍDA
 
 </script>

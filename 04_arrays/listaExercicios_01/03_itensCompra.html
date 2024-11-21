@@ -12,11 +12,18 @@
     */
 
     //ENTRADA
+    const fruitList = [prompt('Informe fruta:(1)'), prompt('Informe fruta:(2)'), prompt('Informe fruta:(3)')];
+    const drinkList = [prompt('Informe bebida:(1)'), prompt('Informe bebida:(2)'), prompt('Informe bebida:(3)')];
 
 
     //PROCESSAMENTO
 
 
     //SAÍDA
+    display(`
+    Lista de Frutas: ${fruitList.join(', ')};<br>
+    Lista de Bebidas: ${drinkList.join(', ')};<br>
+    Lista total: ${fruitList.concat(drinkList).join(', ')};
+    `)
 
 </script>

@@ -1,20 +1,26 @@
 <meta charset="UTF-8" />
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: ADICIONAR SUV
-    Crie os seguintes arrays:
-     let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
-    Pergunte ao usuário qual carro deseja ADICIONAR na lista.
-    Apresente a lista antiga de SUVs e a nova lista, após a adição do veículo solicitado.
-    */
+  /*
+  PROBLEMA: ADICIONAR SUV
+  Crie os seguintes arrays:
+   let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+  Pergunte ao usuário qual carro deseja ADICIONAR na lista.
+  Apresente a lista antiga de SUVs e a nova lista, após a adição do veículo solicitado.
+  */
 
-    //ENTRADA
+  //ENTRADA
+  let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
+  const newCar = prompt(`Qual carro você deseja adicionar na lista? 
+    Lista: ${carrosSUV}`);
 
+  //PROCESSAMENTO
+  const newList = carrosSUV
+  newList.push(newCar.charAt(0).toUpperCase() + newCar.substring(1))
 
-    //PROCESSAMENTO
-
-
-    //SAÍDA
+  //SAÍDA
+  display(`${newCar} adicionado com sucesso:<br>
+Lista antiga: ${carrosSUV.join(', ')}<br>
+Nova lista: ${newList.join(', ')}`);
 
 </script>

@@ -1,18 +1,35 @@
 <meta charset="UTF-8" />
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: ARRAY EM ORDEM DECRESCENTE
-    Peça para um usuário inserir três números. Crie um array com os três números, colocando-os em ordem decrescente. Para ordenar, NÃO use o método reverse();
-    Retorne os elementos do array, separando-os por hífen (n1 - n2 - n3).
-    */
+  /*
+  PROBLEMA: ARRAY EM ORDEM DECRESCENTE
+  Peça para um usuário inserir três números. Crie um array com os três números, colocando-os em ordem decrescente. Para ordenar, NÃO use o método reverse();
+  Retorne os elementos do array, separando-os por hífen (n1 - n2 - n3).
+  */
 
-    //ENTRADA
-
-
-    //PROCESSAMENTO
+  //ENTRADA
+  let numbers = [];
 
 
-    //SAÍDA
+  //PROCESSAMENTO
+  for (let i = 0; i < 3; i++) {
+    numbers.push(Number(prompt('Informe um número')));
+  }
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] < numbers[j]) {
+        let temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
+      }
+    }
+  }
+
+  //SAÍDA
+  display(`Números em ordem Decrescente:<br>
+  ${numbers.join('; ')}`);
+
+
+
 
 </script>
