@@ -1,17 +1,47 @@
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <script src="../../../utils.js"></script>
 <script>
-    //PROBLEMA
-    //Considere a lista de nomes abaixo:
-    // let listaDeNomes = ["João", "Maria", "José", "Amanda", "Beatriz", "Júlio", "Olívia"];
-    //Para cada nome que for lido na estrutura de repetição, pergunte ao usuário se é Masculino (M) ou Feminino (F). De acordo com a resposta do usuário, adicione na lista correspondente. Apresente as duas listas de nomes ao final do programa.
+  //PROBLEMA
+  //Considere a lista de nomes abaixo:
+  // let listaDeNomes = ["João", "Maria", "José", "Amanda", "Beatriz", "Júlio", "Olívia"];
+  //Para cada nome que for lido na estrutura de repetição, pergunte ao usuário se é Masculino (M) ou Feminino (F). De acordo com a resposta do usuário, adicione na lista correspondente. Apresente as duas listas de nomes ao final do programa.
 
-    //ENTRADA
+  //ENTRADA
+  let listaDeNomes = [
+    "João",
+    "Maria",
+    "José",
+    "Amanda",
+    "Beatriz",
+    "Júlio",
+    "Olívia",
+  ];
 
+  //PROCESSAMENTO
+  for (let name of listaDeNomes) {
+    indexName = listaDeNomes.indexOf(name);
+    let sexName = undefined;
+    do {
+      sexName != undefined ? alert("Sexo inválido") : null;
+      sexName = prompt(
+        `O nome ${listaDeNomes[indexName]} é masculino (M) ou feminino (F)?`
+      ).toUpperCase();
+    } while (sexName !== 'M' && sexName !== 'F');
 
-    //PROCESSAMENTO
+    switch (sexName) {
+      case "M":
+        listaDeNomes[indexName] = (`${name}: ${sexName}`);
+        break;
+      case "F":
+        listaDeNomes[indexName] = (`${name}:${sexName}`);;
+        break;
+      default:
+        alert("Sexo inválido");
+        break;
+    }
 
-    
-    //SAÍDA
+  }
 
+  //SAÍDA
+  display(`Lista de nomes com gênero(Nome: Sexo):<br> ${listaDeNomes.join(";<br>")}.`);
 </script>

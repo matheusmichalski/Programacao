@@ -7,11 +7,25 @@
     //Separe os números pares e os números ímpares em listas distintas e apresente as listas de forma crescente e forma descrescente.
 
     //ENTRADA
+    let listaDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let pairsNumbers = [];
+    let oddNumbers = [];
 
 
     //PROCESSAMENTO
-
+    for (let number of listaDeNumeros) {
+        if (number % 2 === 0) {
+            pairsNumbers.push(number);
+        } else {
+            oddNumbers.push(number);
+        }
+    }
 
     //SAÍDA
+    display(`Números pares (Crescente): ${pairsNumbers.sort((a, b) => a - b).join(', ')}<br>
+    Números pares (Descrescente ): ${pairsNumbers.sort((a, b) => b - a).join(', ')}<br>
+    Números ímpares (Crescente): ${oddNumbers.sort((a, b) => a - b).join(', ')}<br>
+    Numero ímpares (Descrescente): ${oddNumbers.sort((a, b) => b - a).join(', ')}
+    `);
 
 </script>
