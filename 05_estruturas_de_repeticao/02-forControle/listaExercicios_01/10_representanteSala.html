@@ -1,19 +1,57 @@
 <meta charset="UTF-8">
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: REPRESENTANTE DE SALA
-    Peça para o programa toAsk ao professor regente o nome dos três candidatos a representante da sala.
-    Peça também para o programa toAsk ao professor regente a quantidade de alunos votantes.
-    Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação, com o quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
-    */
+  /*
+  PROBLEMA: REPRESENTANTE DE SALA
+  Peça para o programa perguntar ao professor regente o nome dos três candidatos a representante da sala.
+  Peça também para o programa perguntar ao professor regente a quantidade de alunos votantes.
+  Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação, com o quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
+  */
 
-    //ENTRADA
+  //ENTRADA
+  const candidates = [];
+
+  for (i = 1; i <= 3; i++) {
+    let candidate = { name: undefined, votes: 0, percentage: 0 };
+
+    candidate.name = reqString(`Informe o nome do candidato (${i}):`)
+    candidates.push(candidate);
+  }
+  let studentsVotes = toAsk("Informe o número de alunos votantes da sala:");
 
 
-    //PROCESSAMENTO
+  //PROCESSAMENTO
+  for (i = 1; i <= studentsVotes; i++) {
+    let vote = toAsk(`Informe seu voto(${i}): 1 - ${candidates[0].name}, 2 - ${candidates[1].name}, 3 - ${candidates[2].name}`);
 
+    if (vote > 3 || vote < 1) {
+      alert("Voto inválido, tente novamente.")
+      i--
+      continue
+    }
 
-    //SAÍDA
+    switch (vote) {
+      case 1:
+        candidates[0].votes++
+        break
+      case 2:
+        candidates[1].votes++
+        break
+      case 3:
+        candidates[2].votes++
+        break
+    }
+  }
 
+  candidates.sort((a, b) => b.votes - a.votes)
+
+  for (i = 0; i < candidates.length; i++) {
+    candidates[i].percentage = ((candidates[i].votes / studentsVotes) * 100).toFixed(2);
+  }
+
+  //SAÍDA
+  display(`Na sala houve três candidatos a representante: ${candidates[0].name}; ${candidates[1].name}; ${candidates[2].name}<br>
+<br>1º: ${candidates[0].name} com: ${candidates[0].votes} votos => ${candidates[0].percentage}%
+<br>2º: ${candidates[1].name} com: ${candidates[1].votes} votos => ${candidates[1].percentage}% 
+<br>3º: ${candidates[2].name} com: ${candidates[2].votes} votos => ${candidates[2].percentage}%`);
 </script>

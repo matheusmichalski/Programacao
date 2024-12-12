@@ -1,17 +1,23 @@
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: SOMA E MÉDIA
-    Faça um programa que leia 5 números e informe a soma e média dos números.
-    */
+  /*
+  PROBLEMA: SOMA E MÉDIA
+  Faça um programa que leia 5 números e informe a soma e média dos números.
+  */
 
-    //ENTRADA
+  //ENTRADA
+  const grades = []
 
+  //PROCESSAMENTO
+  for (let i = 0; i < 5; i++) {
+    grades.push(Number(prompt(`Informe a sua nota escolar(${i})`)))
+  }
 
-    //PROCESSAMENTO
+  const avarage = grades.reduce((lastValue, atualValue) => {
+    return lastValue + atualValue
+  }, 0) / grades.length
 
-
-    //SAÍDA
-
+  //SAÍDA
+  display(`A média dos números ${grades.join(',')} é ${avarage.toFixed(1)}`)
 </script>

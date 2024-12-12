@@ -8,11 +8,20 @@
     */
 
     //ENTRADA
-    
-
+    const numberGrade = Number(prompt('Quantas notas o aluno obteve?'));
+    let studentGrades = [];
+    let sum = 0
     //PROCESSAMENTO
-    
+
+    for (let i = 0; i < numberGrade; i++) {
+        const newGrade = Number(prompt(`Informe a sua º${i + 1} nota`))
+        studentGrades.push(newGrade)
+    }
+    studentGrades.forEach(number => sum += number)
+
+    studentGrades[0] = sum / studentGrades.length
+    studentGrades.length = 1
 
     //SAÍDA
-
+    display(`A média do aluno será: ${studentGrades[0].toFixed(2)}`)
 </script>

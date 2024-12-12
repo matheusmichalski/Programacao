@@ -8,10 +8,25 @@
 
     //ENTRADA
 
-    
+
+    let people = {
+        total: 50000,
+    }
     //PROCESSAMENTO
-    
+    for (let sumYears = 0; sumYears <= 10; sumYears++) {
+        people.total += people.total * 0.015
+        if (sumYears === 5) {
+            people.fiveYears = people.total
+        } else if (sumYears === 10) {
+            people.tenYears = people.total
+        }
+
+    }
 
     //SAÍDA
+    display(`População: ${Math.floor(people.total)}<br>
+    Crescimento:1.5% ano<br>
+    5 anos: ${Math.floor(people.fiveYears)} pessoas<br>
+    10 anos: ${Math.floor(people.tenYears)} pessoas<br>`)
 
 </script>

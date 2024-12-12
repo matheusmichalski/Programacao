@@ -1,21 +1,29 @@
 <meta charset="UTF-8">
 <script src="../../../utils.js"></script>
 <script>
-    /*
-    PROBLEMA: LETRAS REPETIDAS
-    Considere a lista de letras abaixo:
-    let listaDeLetras = ["a", "b", "d", "e", "E", "F", "C", "U", "u", "e", "W", "D"];
-    Faça um programa que identifique as letras repetidas que estão contidas na lista e apresente cada letra apenas uma única vez, e em ordem alfabética.
-    *Letras maiúsculas e minúsculas são a mesma letra e não podem ser repetidas!
-    **Apresente apenas letras minúsculas!
-    */
+  /*
+  PROBLEMA: LETRAS REPETIDAS
+  Considere a lista de letras abaixo:
+  let listaDeLetras = ["a", "b", "d", "e", "E", "F", "C", "U", "u", "e", "W", "D"];
+  Faça um programa que identifique as letras repetidas que estão contidas na lista e apresente cada letra apenas uma única vez, e em ordem alfabética.
+  *Letras maiúsculas e minúsculas são a mesma letra e não podem ser repetidas!
+  **Apresente apenas letras minúsculas!
+  */
 
-    //ENTRADA
+  //ENTRADA
+  let listaDeLetras = ["a", "b", "d", "e", "E", "F", "C", "U", "u", "e", "W", "D"].map(letter => letter.toLowerCase());
+  let lettersNotRepeat = [];
+  //PROCESSAMENTO
+  for (let i = 0; i < listaDeLetras.length; i++) {
+    let letter = listaDeLetras[i];
 
-    
-    //PROCESSAMENTO
+    if (lettersNotRepeat.indexOf(letter) === -1) {
+      lettersNotRepeat.push(letter);
+    }
+  }
 
-    
-    //SAÍDA
+
+  //SAÍDA
+  display(`Letras: ${lettersNotRepeat}`);
 
 </script>

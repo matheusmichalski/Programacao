@@ -7,11 +7,18 @@
     */
 
     //ENTRADA
-
+    const number = Number(prompt('Informe um número'))
+    let isPrime = true;
 
     //PROCESSAMENTO
+    for (let i = 2; i <= Math.sqrt(number); i++) {
 
-
+        if (number % i === 0) {
+            isPrime = false
+        }
+    }
     //SAÍDA
+
+    display(`O número ${number} ${isPrime === true ? 'é' : 'não é'} primo.`)
 
 </script>

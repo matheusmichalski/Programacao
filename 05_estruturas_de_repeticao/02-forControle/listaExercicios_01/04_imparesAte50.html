@@ -7,11 +7,21 @@
     */
 
     //ENTRADA
-
+    const oddNumbers = []
 
     //PROCESSAMENTO
+    for (let i = 0; i < 50; i++) {
+        if ((i % 2) !== 0) {
+            oddNumbers.push(i)
+        }
+    }
 
 
     //SAÍDA
+    display(`<div 
+    style='text-align:center;
+    padding-bottom:14px'>
+    Os números ímpares até 50 são:</div> 
+    ${oddNumbers.join(', ')}`)
 
 </script>

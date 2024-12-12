@@ -7,12 +7,18 @@
     No final, apresente o maior número informado pelo usuário.
     */
 
-    //ENTRADA
+    //ENTRADA 
+    const numbers = []
 
-    
+
     //PROCESSAMENTO
+    for (let i = 0; i < 5; i++) {
+        const newNumber = Number(prompt(`Informe um número(º${i + 1})`))
+        numbers.push(newNumber)
+    }
 
-    
+
     //SAÍDA
+    display(`O maior número informado foi ${numbers.sort((a, b) => b - a)[0]}.`)
 
 </script>
