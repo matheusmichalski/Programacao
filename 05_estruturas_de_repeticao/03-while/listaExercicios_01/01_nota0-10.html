@@ -11,8 +11,10 @@
 
     //PROCESSAMENTO
     do {
-        grade = Number(prompt("Informe uma nota entre 0 e 10"))
-    } while (grade > 10 || grade < 0);
+        if (grade !== undefined) alert("Nota inválida")
+        grade = Number(prompt("Informe uma nota entre 0 e 10").trim())
+    } while (grade > 10 || grade < 0 || !/^\d+$/.test(grade));
+    alert("Nota válida")
 
     //SAÍDA
 
