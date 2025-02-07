@@ -1,5 +1,4 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
 <script>
     /*
     PROBLEMA: URNA ELETRÔNICA
@@ -23,7 +22,51 @@
     //ENTRADA
 
 
+    const votes = {
+        mariazinha: 0,
+        joaozinho: 0,
+        nulo: 0,
+        branco: 0,
+    }
+    let vote;
+
     //PROCESSAMENTO
+
+    while (true) {
+        vote = Number(prompt(` Escolha seu voto:
+    As opções são:
+    1. Candidato Joãozinho
+    2. Candidato Mariazinha
+    3. Nulo
+    4. Branco`));
+
+        if (vote === 0) {
+            const votosTotais = votes.mariazinha + votes.joaozinho + votes.nulo + votes.branco;
+            let winnerCandidate = "";
+
+            if (votes.mariazinha > votes.joaozinho) {
+                winnerCandidate = "Mariazinha";
+            } else if (votes.mariazinha < votes.joaozinho) {
+                winnerCandidate = "Joãozinho";
+            } else {
+                winnerCandidate = "Houve empate";
+            }
+
+            alert(`Votos joãozinho: ${(votes.joaozinho)};
+        Votos Mariazinha: ${(votes.mariazinha)};
+        Votos Nulos: ${((votes.nulo / votosTotais) * 100).toFixed(1)}%;
+        Votos Brancos: ${((votes.branco / votosTotais) * 100).toFixed(1)}%;
+        Candidato vencedor: ${winnerCandidate}`)
+
+        }
+        if (vote === 1) votes.joaozinho++;
+        if (vote === 2) votes.mariazinha++;
+        if (vote === 3) votes.nulo++;
+        if (vote === 4) votes.branco++;
+        if (vote > 4 || vote < 0) alert("Valor inválido");
+
+    };
+
 
 
     //SAÍDA

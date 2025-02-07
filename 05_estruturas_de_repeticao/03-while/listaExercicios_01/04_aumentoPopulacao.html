@@ -7,11 +7,18 @@
     */
 
     //ENTRADA
-
+    let countryA = 80000;
+    let countryB = 200000;
+    let ages = 0;
 
     //PROCESSAMENTO
-
+    while (countryA <= countryB) {
+        countryA *= 1.03
+        countryB *= 1.015
+        ages++
+    }
 
     //SAÍDA
+    alert(`Serão necessários: ${ages} anos.`)
 
 </script>

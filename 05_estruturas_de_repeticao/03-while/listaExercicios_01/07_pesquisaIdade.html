@@ -1,9 +1,9 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
 <script>
     /*
     PROBLEMA: PESQUISA DE IDADE
-    Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário. Faça um programa que calcule e mostre:
+    Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário.
+    Faça um programa que calcule e mostre:
 
     a) A média dos salários do grupo;
     b) A maior e a menor idade do grupo;
@@ -15,10 +15,45 @@
 
     //ENTRADA
 
+    let totalPeople = Number(prompt("Informe a quantidade de habitantes na região:"));
+    let wageAvarege = 0, highestAge = 0, lowestAge = 0, numberWomens = 0;
+    let ages = []
+    let wages = []
+    let people = []
 
     //PROCESSAMENTO
+    do {
+        const person = {
+            age: Number(prompt("Informe sua idade:")),
+            gen: prompt("Informe seu sexo (f - feminino; m - masculino):").toLowerCase(),
+            wage: Number(prompt("Informe seu salário:")),
+        }
+        people.push(person);
+        totalPeople--
+    } while (totalPeople > 0);
 
 
+    for (person of people) {
+        console.log(person)
+        wageAvarege += person.wage
+        ages.push(person.age)
+        wages.push(person.wage)
+        if (person.gen === "f") numberWomens++;
+    }
+
+    let lowestWage = wages.sort((a, b) => a - b)[0]
+
+    const lowestWagePerson = people.find((person) => person.wage == lowestWage)
+
+    wageAvarege = wageAvarege / people.length;
+    highestAge = ages.sort((a, b) => b - a)[0];
+    lowestAge = ages.sort((a, b) => a - b)[0];
     //SAÍDA
+    alert(`
+        A média dos salários do grupo: ${wageAvarege.toFixed(2)};
+        A maior e a menor idade do grupo ${highestAge}, ${lowestAge};
+        A quantidade de mulheres na região ${numberWomens};.
+        A idade e o sexo da pessoa que possui o menor salário: ${lowestWagePerson.age} anos, ${lowestWagePerson.gen === "f" ? "Feminino" : "Masculino"};`)
+
 
 </script>

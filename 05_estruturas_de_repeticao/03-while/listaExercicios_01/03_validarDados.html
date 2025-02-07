@@ -1,5 +1,4 @@
 <meta charset="UTF-8">
-<script src="../../../utils.js"></script>
 <script>
     /*
     PROBLEMA: VALIDAR DADOS DO USUÁRIO
@@ -11,12 +10,39 @@
     Estado Civil: 's', 'c', 'v', 'd';
     */
 
-    //ENTRADA
+    // ENTRADA
+    let name, age, wage, gen, civilStatus, errors = [];
 
+    // PROCESSAMENTO
+    do {
+        name = prompt("Informe seu nome:").trim();
+        age = Number(prompt("Informe sua idade:"));
+        wage = Number(prompt("Informe seu salário:"));
+        gen = prompt("Informe seu sexo (f - feminino; m - masculino):").toLowerCase();
+        civilStatus = prompt("Informe seu estado civil (s - solteiro; c - casado; v - viúvo; d - divorciado):").toLowerCase();
 
-    //PROCESSAMENTO
+        let errors = [
+            name.length < 3 && "Nome deve ter pelo menos 3 caracteres.",
+            (age < 0 || age > 150) && "Idade deve estar entre 0 e 150.",
+            wage < 0 && "Salário deve ser um número positivo.",
+            !["f", "m"].includes(gen) && "Sexo inválido! Use 'f' ou 'm'.",
+            !["s", "c", "v", "d"].includes(civilStatus) && "Estado civil inválido! Use 's', 'c', 'v' ou 'd'."
+        ].filter(Boolean);
+        console.log(errors.length)
 
+        if (errors.length > 0) alert("Erros encontrados:\n" + errors.join("\n"));
+    } while (errors.length > 0);
 
-    //SAÍDA
+    alert(`
+    Nome: ${name}
+    Idade: ${age}
+    Salário: ${wage}
+    Sexo: ${gen === "f" ? "Feminino" : "Masculino"}
+    Estado civil: ${civilStatus === "s" ? "Solteiro" :
+            civilStatus === "c" ? "Casado" :
+                civilStatus === "v" ? "Viúvo" : "Divorciado"
+        }
+`);
+
 
 </script>
