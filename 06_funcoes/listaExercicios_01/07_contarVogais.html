@@ -8,11 +8,14 @@
     */
 
     //ENTRADA
-
-
+    const string = prompt("Informe uma string");
     //PROCESSAMENTO
-
+    const getVogals = (string) => {
+        const vogalsOnString = Array.from(string).filter(char => /[aeiouAEIOUáaéíóúÁÉÍÓÚâêîôûÂÊÎÔÛàèìòùÀÈÌÒÙäëïöüÄËÏÖÜ]/g.test(char)).length
+        alert(`A string "${string}"" possui ${vogalsOnString} vogais`)
+    }
 
     //SAÍDA
+    getVogals(string)
 
 </script>

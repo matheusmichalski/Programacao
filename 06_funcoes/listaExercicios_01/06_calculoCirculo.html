@@ -9,11 +9,18 @@
     */
 
     //ENTRADA
-
+    const radius = Number(prompt("Informe o raio do círculo"))
 
     //PROCESSAMENTO
+    const getCircleProps = (radius) => {
+        const circleArea = (Math.PI * radius ** 2)
+        const perimeterCircle = 2 * Math.PI * radius
+        alert(`A área de um círculo de raio ${radius} é ${circleArea.toFixed(2)}.\n O seu perímetro é ${perimeterCircle.toFixed(2)}`)
+    }
 
 
     //SAÍDA
+    getCircleProps(radius)
+
 
 </script>

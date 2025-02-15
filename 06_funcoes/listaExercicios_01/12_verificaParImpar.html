@@ -6,11 +6,14 @@
     */
 
     //ENTRADA
-
+    const number = Number(prompt("Informe um número"))
 
     //PROCESSAMENTO
-
+    const getParity = (number) => {
+        return number % 2 === 0 ? "par" : "impar"
+    }
 
     //SAÍDA
+    alert(`O número ${number} é ${getParity(number)}`)
 
 </script>

@@ -7,11 +7,15 @@
     */
 
     //ENTRADA
-
+    const number = Number(prompt("Informe um número"))
 
     //PROCESSAMENTO
+    const getCubeNumber = (number) => {
+        const cubeNumber = Math.pow(number, 3)
+        alert(`O número ${number} ao cubo é ${cubeNumber}`)
+    }
 
 
     //SAÍDA
-
+    getCubeNumber(number)
 </script>

@@ -6,11 +6,18 @@
     */
 
     //ENTRADA
-
+    const number = Number(prompt("Informe um número inteiro"))
 
     //PROCESSAMENTO
-
+    const getFactorialNumber = (number) => {
+        if (number == 1) {
+            return 1;
+        } else {
+            return number * getFactorialNumber(number - 1);
+        }
+    }
 
     //SAÍDA
+    alert(`Fatorial de ${number} é: ${getFactorialNumber(number)}`)
 
 </script>

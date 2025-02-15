@@ -7,11 +7,18 @@
     */
 
     //ENTRADA
+    const base = Number(prompt("Informe a base do triângulo"))
+    const heigth = Number(prompt("Informe a altura do triângulo"))
 
 
     //PROCESSAMENTO
+    const getTriangleArea = (base, heigth) => {
+        const triangleArea = (base * heigth) / 2
+        alert(`A área de um triângulo de base ${base} e altura ${heigth} é: ${triangleArea}`)
+    }
 
 
     //SAÍDA
+    getTriangleArea(base, heigth)
 
 </script>

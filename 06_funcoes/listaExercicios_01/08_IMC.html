@@ -7,11 +7,18 @@
     */
 
     //ENTRADA
+    const weigth = Number(prompt("Informe o seu peso(kg)"))
+    const heigth = Number(prompt("Informe o sua altura(m)"))
 
 
     //PROCESSAMENTO
+    const getIMC = (weigth, heigth) => {
+        const IMC = weigth / heigth ** 2
+        alert(`Seu imc é com ${weigth} kg's e ${heigth} metros de altura é: ${IMC.toFixed(2)}`)
+    }
 
 
     //SAÍDA
+    getIMC(weigth, heigth)
 
 </script>

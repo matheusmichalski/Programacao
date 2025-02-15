@@ -7,11 +7,15 @@
     */
 
     //ENTRADA
-
+    const phrase = prompt("Informe uma frase")
+    const char = prompt("Informe uma let")
 
     //PROCESSAMENTO
-
-
+    const getCharsOnString = (phrase, char) => {
+        const charsOnString = Array.from(phrase).filter(char => char.toLowerCase() === char.toLowerCase()).length
+        alert(`A frase "${phrase}" possui ${charsOnString} letras "${char}"`)
+    }
     //SAÍDA
+    getCharsOnString(phrase, char)
 
 </script>

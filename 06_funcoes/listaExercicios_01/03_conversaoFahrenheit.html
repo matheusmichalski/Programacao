@@ -7,11 +7,18 @@
     */
 
     //ENTRADA
+    const celsius = Number(prompt("Informe uma temperatura em celcius"))
 
 
     //PROCESSAMENTO
+    const getFahrenheit = (celsius) => {
+        const fahrenheitTemp = (9 * celsius + 160) / 5
+        alert(`A temperatura ${celsius} celsius em Fahrenheit é ${fahrenheitTemp}`)
+    }
 
 
     //SAÍDA
+    getFahrenheit(celsius)
+
 
 </script>
